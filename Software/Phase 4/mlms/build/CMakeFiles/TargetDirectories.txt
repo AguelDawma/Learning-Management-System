@@ -3,3 +3,5 @@ C:/Users/thape/LMS/Software/Phase 4/mlms/build/CMakeFiles/rebuild_cache.dir
 C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/CMakeFiles/mlms.dir
 C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/CMakeFiles/edit_cache.dir
 C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/CMakeFiles/rebuild_cache.dir
+C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/CMakeFiles/mlms_autogen_timestamp_deps.dir
+C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/CMakeFiles/mlms_autogen.dir

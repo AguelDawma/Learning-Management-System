@@ -1,47 +1,58 @@
-#include <iostream>
+#include <QApplication>
 #include <sqlite3.h>
-#include "domain/Assignment.hpp"
-#include "domain/Submission.hpp"
-#include "data/AssignmentRepository.hpp"
-#include "data/SubmissionRepository.hpp"
-#include "services/SubmissionService.hpp"
+#include <argon2.h>
+#include "data/UserRepository.hpp"
+#include "services/AuthService.hpp"
+#include "ui/LoginWindow.hpp"
 
-int main() {
-    std::cout << "Testing MLMS Service Layer...\n";
+// Helper to hash a password using argon2 for testing
+std::string hashPassword(const std::string& password) {
+    char encoded[64];
+    uint8_t salt[16] = {0}; // deterministic salt for testing
+    argon2id_hash_encoded(1, 65536, 1, password.c_str(), password.length(), 
+                          salt, 16, 32, encoded, 64);
+    return std::string(encoded);
+}
+
+int main(int argc, char* argv[]) {
+    QApplication app(argc, argv);
 
     sqlite3* db = nullptr;
     if (sqlite3_open(":memory:", &db) != SQLITE_OK) {
-        std::cerr << "Failed to open in-memory database\n";
         return 1;
     }
 
     const char* schema = 
-        "CREATE TABLE assignment (assignment_id INTEGER PRIMARY KEY, course_id INTEGER, title TEXT, description TEXT, deadline TEXT, max_mark INTEGER, is_published INTEGER, created_by INTEGER);"
-        "CREATE TABLE extension (assignment_id INTEGER, student_id INTEGER, new_deadline TEXT, reason TEXT, granted_by INTEGER, granted_at TEXT);"
-        "INSERT INTO assignment VALUES (101, 1, 'Lab 1', 'C++ basics', '2026-06-01T23:59:59Z', 100, 1, 2);"
-        "INSERT INTO extension VALUES (101, 1, '2026-06-05T23:59:59Z', 'Medical', 2, '2026-06-02');";
+        "CREATE TABLE app_user ("
+        "  user_id INTEGER PRIMARY KEY,"
+        "  username TEXT NOT NULL UNIQUE,"
+        "  full_name TEXT NOT NULL,"
+        "  role TEXT NOT NULL,"
+        "  password_hash TEXT NOT NULL,"
+        "  is_active INTEGER NOT NULL DEFAULT 1"
+        ");"
+        "CREATE TABLE department ("
+        "  department_id INTEGER PRIMARY KEY,"
+        "  name TEXT NOT NULL,"
+        "  hod_id INTEGER REFERENCES app_user(user_id)"
+        ");";
 
-    char* errMsg = nullptr;
-    if (sqlite3_exec(db, schema, nullptr, nullptr, &errMsg) != SQLITE_OK) {
-        std::cerr << "SQL error: " << errMsg << "\n";
-        sqlite3_free(errMsg);
-        sqlite3_close(db);
-        return 1;
-    }
+    sqlite3_exec(db, schema, nullptr, nullptr, nullptr);
 
-    AssignmentRepository assignmentRepo(db);
-    SubmissionRepository submissionRepo(db);
-    SubmissionService submissionService(assignmentRepo, submissionRepo);
+    // Insert a test user with hashed password ("password123")
+    std::string hash = hashPassword("password123");
+    std::string insertUser = "INSERT INTO app_user(user_id, username, full_name, role, password_hash, is_active) "
+                             "VALUES (1, 'student1', 'Jane Doe', 'STUDENT', '" + hash + "', 1);";
+    sqlite3_exec(db, insertUser.c_str(), nullptr, nullptr, nullptr);
 
-    // Test submission before extension deadline (should NOT be late)
-    bool isLate1 = submissionService.isSubmissionLate(101, 1, "2026-06-03T12:00:00Z");
-    std::cout << "Submission on June 3 (Extension deadline is June 5): " << (isLate1 ? "LATE" : "ON TIME") << "\n";
+    UserRepository userRepo(db);
+    AuthService authService(userRepo);
 
-    // Test submission after extension deadline (SHOULD be late)
-    bool isLate2 = submissionService.isSubmissionLate(101, 1, "2026-06-06T00:00:00Z");
-    std::cout << "Submission on June 6 (Extension deadline is June 5): " << (isLate2 ? "LATE" : "ON TIME") << "\n";
+    LoginWindow loginWindow(authService);
+    loginWindow.show();
+
+    int result = app.exec();
 
     sqlite3_close(db);
-    std::cout << "Service layer tests passed successfully!\n";
-    return 0;
+    return result;
 }

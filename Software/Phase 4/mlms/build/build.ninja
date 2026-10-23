@@ -70,13 +70,22 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Order-only phony target for mlms
 
-build cmake_object_order_depends_target_mlms: phony || .
+build cmake_object_order_depends_target_mlms: phony || src/mlms_autogen src/mlms_autogen/mocs_compilation.cpp src/mlms_autogen/timestamp src/mlms_autogen_timestamp_deps
+
+build src/CMakeFiles/mlms.dir/mlms_autogen/mocs_compilation.cpp.obj: CXX_COMPILER__mlms_unscanned_ C$:/Users/thape/LMS/Software/Phase$ 4/mlms/build/src/mlms_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_mlms
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
+  DEP_FILE = src\CMakeFiles\mlms.dir\mlms_autogen\mocs_compilation.cpp.obj.d
+  FLAGS = -std=c++17 -Wall -Wextra -Wpedantic -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/include" -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
+  OBJECT_DIR = src\CMakeFiles\mlms.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms.dir\mlms_autogen
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms.dir
 
 build src/CMakeFiles/mlms.dir/main.cpp.obj: CXX_COMPILER__mlms_unscanned_ C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/main.cpp || cmake_object_order_depends_target_mlms
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
   DEP_FILE = src\CMakeFiles\mlms.dir\main.cpp.obj.d
   FLAGS = -std=c++17 -Wall -Wextra -Wpedantic -Werror
-  INCLUDES = -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/include" -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
   OBJECT_DIR = src\CMakeFiles\mlms.dir
   OBJECT_FILE_DIR = src\CMakeFiles\mlms.dir
   TARGET_SUPPORT_DIR = src\CMakeFiles\mlms.dir
@@ -85,9 +94,18 @@ build src/CMakeFiles/mlms.dir/domain/User.cpp.obj: CXX_COMPILER__mlms_unscanned_
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
   DEP_FILE = src\CMakeFiles\mlms.dir\domain\User.cpp.obj.d
   FLAGS = -std=c++17 -Wall -Wextra -Wpedantic -Werror
-  INCLUDES = -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/include" -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
   OBJECT_DIR = src\CMakeFiles\mlms.dir
   OBJECT_FILE_DIR = src\CMakeFiles\mlms.dir\domain
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms.dir
+
+build src/CMakeFiles/mlms.dir/ui/LoginWindow.cpp.obj: CXX_COMPILER__mlms_unscanned_ C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/ui/LoginWindow.cpp || cmake_object_order_depends_target_mlms
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
+  DEP_FILE = src\CMakeFiles\mlms.dir\ui\LoginWindow.cpp.obj.d
+  FLAGS = -std=c++17 -Wall -Wextra -Wpedantic -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/include" -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
+  OBJECT_DIR = src\CMakeFiles\mlms.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms.dir\ui
   TARGET_SUPPORT_DIR = src\CMakeFiles\mlms.dir
 
 
@@ -98,7 +116,7 @@ build src/CMakeFiles/mlms.dir/domain/User.cpp.obj: CXX_COMPILER__mlms_unscanned_
 #############################################
 # Link the executable src\mlms.exe
 
-build src/mlms.exe: CXX_EXECUTABLE_LINKER__mlms_ src/CMakeFiles/mlms.dir/main.cpp.obj src/CMakeFiles/mlms.dir/domain/User.cpp.obj | C$:/msys64/mingw64/lib/libsqlite3.dll.a C$:/msys64/mingw64/lib/libsqlite3.dll.a C$:/msys64/mingw64/lib/libQt6Widgets.dll.a C$:/msys64/mingw64/lib/libQt6Gui.dll.a C$:/msys64/mingw64/lib/libQt6Core.dll.a
+build src/mlms.exe: CXX_EXECUTABLE_LINKER__mlms_ src/CMakeFiles/mlms.dir/mlms_autogen/mocs_compilation.cpp.obj src/CMakeFiles/mlms.dir/main.cpp.obj src/CMakeFiles/mlms.dir/domain/User.cpp.obj src/CMakeFiles/mlms.dir/ui/LoginWindow.cpp.obj | C$:/msys64/mingw64/lib/libsqlite3.dll.a C$:/msys64/mingw64/lib/libsqlite3.dll.a C$:/msys64/mingw64/lib/libQt6Widgets.dll.a C$:/msys64/mingw64/lib/libQt6Gui.dll.a C$:/msys64/mingw64/lib/libQt6Core.dll.a || src/mlms_autogen src/mlms_autogen_timestamp_deps
   LINK_LIBRARIES = C:/msys64/mingw64/lib/libsqlite3.dll.a  -largon2  C:/msys64/mingw64/lib/libsqlite3.dll.a  -largon2  C:/msys64/mingw64/lib/libQt6Widgets.dll.a  C:/msys64/mingw64/lib/libQt6Gui.dll.a  C:/msys64/mingw64/lib/libQt6Core.dll.a  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lmpr  -luserenv  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = src\CMakeFiles\mlms.dir
   POST_BUILD = cd .
@@ -131,12 +149,45 @@ build src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 
 build src/rebuild_cache: phony src/CMakeFiles/rebuild_cache.util
 
+
+#############################################
+# Utility command for mlms_autogen_timestamp_deps
+
+build src/mlms_autogen_timestamp_deps: phony
+
+
+#############################################
+# Utility command for mlms_autogen
+
+build src/mlms_autogen: phony src/CMakeFiles/mlms_autogen src/mlms_autogen/timestamp src/mlms_autogen/mocs_compilation.cpp src/mlms_autogen_timestamp_deps
+
+
+#############################################
+# Custom command for src\mlms_autogen\timestamp
+
+build src/mlms_autogen/timestamp src/mlms_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}src/mlms_autogen/timestamp ${cmake_ninja_workdir}src/mlms_autogen/mocs_compilation.cpp: CUSTOM_COMMAND C$:/msys64/mingw64/share/qt6/bin/moc.exe || src/mlms_autogen_timestamp_deps
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\thape\LMS\Software\Phase 4\mlms\build\src" && C:\msys64\mingw64\bin\cmake.exe -E cmake_autogen "C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/CMakeFiles/mlms_autogen.dir/AutogenInfo.json" "" && C:\msys64\mingw64\bin\cmake.exe -E touch "C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/timestamp" && C:\msys64\mingw64\bin\cmake.exe -E cmake_transform_depfile Ninja gccdepfile "C:/Users/thape/LMS/Software/Phase 4/mlms" "C:/Users/thape/LMS/Software/Phase 4/mlms/src" "C:/Users/thape/LMS/Software/Phase 4/mlms/build" "C:/Users/thape/LMS/Software/Phase 4/mlms/build/src" "C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/deps" "C:/Users/thape/LMS/Software/Phase 4/mlms/build/CMakeFiles/d/eb739addf2c957fd63b3e97f804850f89aefac99d9b8c1f02a9bfa2cf6e877f4.d""
+  DESC = Automatic MOC for target mlms
+  depfile = CMakeFiles\d\eb739addf2c957fd63b3e97f804850f89aefac99d9b8c1f02a9bfa2cf6e877f4.d
+  deps = gcc
+  restat = 1
+
+
+#############################################
+# Phony custom command for src\CMakeFiles\mlms_autogen
+
+build src/CMakeFiles/mlms_autogen | ${cmake_ninja_workdir}src/CMakeFiles/mlms_autogen: phony src/mlms_autogen/timestamp || src/mlms_autogen_timestamp_deps
+
 # =============================================================================
 # Target aliases.
 
 build mlms: phony src/mlms.exe
 
 build mlms.exe: phony src/mlms.exe
+
+build mlms_autogen: phony src/mlms_autogen
+
+build mlms_autogen_timestamp_deps: phony src/mlms_autogen_timestamp_deps
 
 # =============================================================================
 # Folder targets.
@@ -173,9 +224,15 @@ build C$:/Users/thape/LMS/Software/Phase$ 4/mlms/CMakeLists.txt C$:/Users/thape/
 
 
 #############################################
+# Clean additional files.
+
+build CMakeFiles/clean.additional: CLEAN_ADDITIONAL
+
+
+#############################################
 # Clean all the built files.
 
-build clean: CLEAN
+build clean: CLEAN CMakeFiles/clean.additional
 
 
 #############################################

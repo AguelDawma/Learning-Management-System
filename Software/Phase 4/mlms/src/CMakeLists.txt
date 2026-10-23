@@ -5,6 +5,7 @@ add_library(mlms_app INTERFACE)
 add_executable(mlms 
     main.cpp
     domain/User.cpp
+    ui/LoginWindow.cpp
 )
 
 target_link_libraries(mlms PRIVATE
