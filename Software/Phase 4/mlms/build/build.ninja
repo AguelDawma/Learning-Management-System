@@ -98,8 +98,8 @@ build src/CMakeFiles/mlms.dir/domain/User.cpp.obj: CXX_COMPILER__mlms_unscanned_
 #############################################
 # Link the executable src\mlms.exe
 
-build src/mlms.exe: CXX_EXECUTABLE_LINKER__mlms_ src/CMakeFiles/mlms.dir/main.cpp.obj src/CMakeFiles/mlms.dir/domain/User.cpp.obj | C$:/msys64/mingw64/lib/libsqlite3.dll.a C$:/msys64/mingw64/lib/libQt6Widgets.dll.a C$:/msys64/mingw64/lib/libQt6Gui.dll.a C$:/msys64/mingw64/lib/libQt6Core.dll.a
-  LINK_LIBRARIES = C:/msys64/mingw64/lib/libsqlite3.dll.a  -largon2  C:/msys64/mingw64/lib/libQt6Widgets.dll.a  C:/msys64/mingw64/lib/libQt6Gui.dll.a  C:/msys64/mingw64/lib/libQt6Core.dll.a  -lmpr  -luserenv  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+build src/mlms.exe: CXX_EXECUTABLE_LINKER__mlms_ src/CMakeFiles/mlms.dir/main.cpp.obj src/CMakeFiles/mlms.dir/domain/User.cpp.obj | C$:/msys64/mingw64/lib/libsqlite3.dll.a C$:/msys64/mingw64/lib/libsqlite3.dll.a C$:/msys64/mingw64/lib/libQt6Widgets.dll.a C$:/msys64/mingw64/lib/libQt6Gui.dll.a C$:/msys64/mingw64/lib/libQt6Core.dll.a
+  LINK_LIBRARIES = C:/msys64/mingw64/lib/libsqlite3.dll.a  -largon2  C:/msys64/mingw64/lib/libsqlite3.dll.a  -largon2  C:/msys64/mingw64/lib/libQt6Widgets.dll.a  C:/msys64/mingw64/lib/libQt6Gui.dll.a  C:/msys64/mingw64/lib/libQt6Core.dll.a  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lmpr  -luserenv  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = src\CMakeFiles\mlms.dir
   POST_BUILD = cd .
   PRE_LINK = cd .

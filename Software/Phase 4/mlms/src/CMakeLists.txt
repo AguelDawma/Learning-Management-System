@@ -14,5 +14,5 @@ target_link_libraries(mlms PRIVATE
 target_include_directories(mlms PRIVATE ${ARGON2_INCLUDE_DIRS})
 
 if(MLMS_BUILD_GUI)
-    target_link_libraries(mlms PRIVATE Qt6::Widgets)
+    target_link_libraries(mlms PRIVATE SQLite::SQLite3 argon2 Qt6::Widgets Qt6::Gui Qt6::Core)
 endif()

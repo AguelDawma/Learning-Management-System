@@ -40,7 +40,13 @@ public:
           maxMark_(maxMark), isPublished_(isPublished), createdBy_(createdBy) {}
 
     int id() const { return id_; }
+    int courseId() const { return courseId_; }
+    std::string title() const { return title_; }
+    std::string description() const { return description_; }
+    std::string deadline() const { return deadline_; }
     int maxMark() const { return maxMark_; }
+    bool isPublished() const { return isPublished_; }
+    int createdBy() const { return createdBy_; }
     
     // Implements BR-01: Effective deadline is the extension deadline if one exists, otherwise original.
     std::string effectiveDeadline(const Extension* ext) const {
