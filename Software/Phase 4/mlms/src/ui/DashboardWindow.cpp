@@ -82,14 +82,43 @@ void DashboardWindow::setupStudentUI() {
 void DashboardWindow::setupLecturerUI() {
     auto* manageTab = new QWidget();
     auto* tabLayout = new QVBoxLayout(manageTab);
-    tabLayout->addWidget(new QLabel("<b>Lecturer Controls:</b> Create assignments and review submissions.", this));
+
+    auto* listWidget = new QListWidget(this);
+    AssignmentRepository assignmentRepo(db_);
+    auto assignments = assignmentRepo.findAll();
+
+    for (const auto& a : assignments) {
+        // Optionally filter by created_by if you want lecturers to see only their own, 
+        // or show all assignments in the system.
+        QString itemText = QString("Assignment ID: %1 | Course %2: %3 (Deadline: %4)")
+                           .arg(a.id())
+                           .arg(a.courseId())
+                           .arg(QString::fromStdString(a.title()))
+                           .arg(QString::fromStdString(a.deadline()));
+        listWidget->addItem(itemText);
+    }
+
+    tabLayout->addWidget(new QLabel("<b>Your Created Assignments:</b>", this));
+    tabLayout->addWidget(listWidget);
     
     auto* createButton = new QPushButton("Create New Assignment", this);
     tabLayout->addWidget(createButton);
 
-    connect(createButton, &QPushButton::clicked, [this]() {
+    connect(createButton, &QPushButton::clicked, [this, listWidget]() {
         AssignmentDialog dialog(db_, user_->id(), this);
-        dialog.exec();
+        if (dialog.exec() == QDialog::Accepted) {
+            // Refresh the list after creating a new one
+            listWidget->clear();
+            auto updatedAssignments = AssignmentRepository(db_).findAll();
+            for (const auto& a : updatedAssignments) {
+                QString itemText = QString("Assignment ID: %1 | Course %2: %3 (Deadline: %4)")
+                                   .arg(a.id())
+                                   .arg(a.courseId())
+                                   .arg(QString::fromStdString(a.title()))
+                                   .arg(QString::fromStdString(a.deadline()));
+                listWidget->addItem(itemText);
+            }
+        }
     });
 
     tabWidget_->addTab(manageTab, "Manage Assignments");

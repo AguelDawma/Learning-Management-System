@@ -4,6 +4,7 @@
 #include <sqlite3.h>
 
 class QLineEdit;
+class QTextEdit;
 
 class SubmissionDialog : public QDialog {
     Q_OBJECT
@@ -12,9 +13,10 @@ class SubmissionDialog : public QDialog {
     int studentId_;
 
     QLineEdit* filePathEdit_;
-    QLineEdit* checksumEdit_;
+    QTextEdit* additionalInfoEdit_;
 
 private slots:
+    void handleBrowse();
     void handleUpload();
 
 public:
