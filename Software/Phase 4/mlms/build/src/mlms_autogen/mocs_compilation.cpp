@@ -2,3 +2,4 @@
 #include "UYX5XTB5RZ/moc_AssignmentDialog.cpp"
 #include "UYX5XTB5RZ/moc_DashboardWindow.cpp"
 #include "UYX5XTB5RZ/moc_LoginWindow.cpp"
+#include "UYX5XTB5RZ/moc_SubmissionDialog.cpp"

@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
     QApplication app(argc, argv);
 
     sqlite3* db = nullptr;
-    if (sqlite3_open(":memory:", &db) != SQLITE_OK) {
+    if (sqlite3_open("mlms.db", &db) != SQLITE_OK) {
         return 1;
     }
 
@@ -46,6 +46,17 @@ int main(int argc, char* argv[]) {
         "  max_mark INTEGER NOT NULL,"
         "  is_published INTEGER NOT NULL,"
         "  created_by INTEGER REFERENCES app_user(user_id)"
+        ");"
+        "CREATE TABLE IF NOT EXISTS submission ("
+        "  submission_id INTEGER PRIMARY KEY,"
+        "  assignment_id INTEGER NOT NULL REFERENCES assignment(assignment_id),"
+        "  student_id INTEGER NOT NULL REFERENCES app_user(user_id),"
+        "  version INTEGER NOT NULL CHECK (version >= 1),"
+        "  file_path TEXT NOT NULL,"
+        "  checksum TEXT NOT NULL CHECK (length(checksum) = 64),"
+        "  submitted_at TEXT NOT NULL,"
+        "  state TEXT NOT NULL CHECK (state IN ('SUBMITTED','LATE','MARKED','RETURNED','MODERATED','RELEASED')),"
+        "  UNIQUE (assignment_id, student_id, version)"
         ");";
 
     sqlite3_exec(db, schema, nullptr, nullptr, nullptr);

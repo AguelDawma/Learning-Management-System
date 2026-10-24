@@ -13,6 +13,8 @@ mlms_autogen/timestamp: \
 	C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/ui/DashboardWindow.hpp \
 	C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/ui/LoginWindow.cpp \
 	C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/ui/LoginWindow.hpp \
+	C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/ui/SubmissionDialog.cpp \
+	C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/ui/SubmissionDialog.hpp \
 	C:/msys64/mingw64/include/_mingw.h \
 	C:/msys64/mingw64/include/_mingw_locale.h \
 	C:/msys64/mingw64/include/_mingw_mac.h \

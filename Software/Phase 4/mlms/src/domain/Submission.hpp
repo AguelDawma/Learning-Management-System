@@ -1,6 +1,8 @@
 #pragma once
 
 #include <string>
+#include <stdexcept>
+#include <utility>
 
 enum class SubmissionState {
     SUBMITTED,
@@ -30,10 +32,45 @@ public:
           checksum_(std::move(checksum)), submittedAt_(std::move(submittedAt)), 
           state_(state) {}
 
+    // Getters
     int id() const { return id_; }
+    int assignmentId() const { return assignmentId_; }
+    int studentId() const { return studentId_; }
+    int version() const { return version_; }
+    const std::string& filePath() const { return filePath_; }
+    const std::string& checksum() const { return checksum_; }
+    const std::string& submittedAt() const { return submittedAt_; }
     SubmissionState state() const { return state_; }
-    
+
+    // Business Logic: Check if submission is past the effective deadline
     bool isLate(const std::string& effectiveDeadline) const {
         return submittedAt_ > effectiveDeadline;
+    }
+
+    // Business Logic: State machine transition enforcement (FR-15)
+    void transitionTo(SubmissionState newState) {
+        bool valid = false;
+        switch (state_) {
+            case SubmissionState::SUBMITTED:
+            case SubmissionState::LATE:
+                if (newState == SubmissionState::MARKED) valid = true;
+                break;
+            case SubmissionState::MARKED:
+                if (newState == SubmissionState::RETURNED || newState == SubmissionState::MODERATED) valid = true;
+                break;
+            case SubmissionState::RETURNED:
+                if (newState == SubmissionState::MARKED) valid = true;
+                break;
+            case SubmissionState::MODERATED:
+                if (newState == SubmissionState::RELEASED) valid = true;
+                break;
+            case SubmissionState::RELEASED:
+                break;
+        }
+
+        if (!valid) {
+            throw std::runtime_error("InvalidTransition: Submission state change not permitted.");
+        }
+        state_ = newState;
     }
 };

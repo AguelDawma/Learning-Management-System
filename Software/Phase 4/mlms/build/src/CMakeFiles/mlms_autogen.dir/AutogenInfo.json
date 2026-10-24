@@ -35,6 +35,12 @@
 			"Mu",
 			"UYX5XTB5RZ/moc_LoginWindow.cpp",
 			null
+		],
+		[
+			"C:/Users/thape/LMS/Software/Phase 4/mlms/src/ui/SubmissionDialog.hpp",
+			"Mu",
+			"UYX5XTB5RZ/moc_SubmissionDialog.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -128,6 +134,11 @@
 		],
 		[
 			"C:/Users/thape/LMS/Software/Phase 4/mlms/src/ui/LoginWindow.cpp",
+			"Mu",
+			null
+		],
+		[
+			"C:/Users/thape/LMS/Software/Phase 4/mlms/src/ui/SubmissionDialog.cpp",
 			"Mu",
 			null
 		]

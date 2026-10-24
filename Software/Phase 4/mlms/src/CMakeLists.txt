@@ -9,6 +9,8 @@ add_executable(mlms
     ui/DashboardWindow.cpp
     ui/AssignmentDialog.cpp
     ui/AssignmentDialog.hpp
+    ui/SubmissionDialog.cpp
+    ui/SubmissionDialog.hpp
 )
 
 target_link_libraries(mlms PRIVATE

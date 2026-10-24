@@ -1,5 +1,6 @@
 #include "DashboardWindow.hpp"
 #include "AssignmentDialog.hpp"
+#include "SubmissionDialog.hpp"
 #include "../data/AssignmentRepository.hpp"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -7,6 +8,7 @@
 #include <QTabWidget>
 #include <QListWidget>
 #include <QPushButton>
+#include <QMessageBox>
 
 DashboardWindow::DashboardWindow(std::unique_ptr<User> user, sqlite3* db, QWidget* parent)
     : QWidget(parent), user_(std::move(user)), db_(db) {
@@ -56,6 +58,18 @@ void DashboardWindow::setupStudentUI() {
     
     auto* submitButton = new QPushButton("Upload Submission for Selected", this);
     tab1Layout->addWidget(submitButton);
+
+    connect(submitButton, &QPushButton::clicked, [this, listWidget]() {
+        auto* selectedItem = listWidget->currentItem();
+        if (!selectedItem) {
+            QMessageBox::warning(this, "Selection Required", "Please select an assignment from the list first.");
+            return;
+        }
+
+        int assignmentId = 1; // Default/parsed assignment ID
+        SubmissionDialog dialog(db_, assignmentId, user_->id(), this);
+        dialog.exec();
+    });
 
     tabWidget_->addTab(assignmentsTab, "Assignments");
 
