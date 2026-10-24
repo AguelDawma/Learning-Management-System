@@ -108,6 +108,15 @@ build src/CMakeFiles/mlms.dir/ui/LoginWindow.cpp.obj: CXX_COMPILER__mlms_unscann
   OBJECT_FILE_DIR = src\CMakeFiles\mlms.dir\ui
   TARGET_SUPPORT_DIR = src\CMakeFiles\mlms.dir
 
+build src/CMakeFiles/mlms.dir/ui/DashboardWindow.cpp.obj: CXX_COMPILER__mlms_unscanned_ C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/ui/DashboardWindow.cpp || cmake_object_order_depends_target_mlms
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
+  DEP_FILE = src\CMakeFiles\mlms.dir\ui\DashboardWindow.cpp.obj.d
+  FLAGS = -std=c++17 -Wall -Wextra -Wpedantic -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/include" -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
+  OBJECT_DIR = src\CMakeFiles\mlms.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms.dir\ui
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target mlms
@@ -116,7 +125,7 @@ build src/CMakeFiles/mlms.dir/ui/LoginWindow.cpp.obj: CXX_COMPILER__mlms_unscann
 #############################################
 # Link the executable src\mlms.exe
 
-build src/mlms.exe: CXX_EXECUTABLE_LINKER__mlms_ src/CMakeFiles/mlms.dir/mlms_autogen/mocs_compilation.cpp.obj src/CMakeFiles/mlms.dir/main.cpp.obj src/CMakeFiles/mlms.dir/domain/User.cpp.obj src/CMakeFiles/mlms.dir/ui/LoginWindow.cpp.obj | C$:/msys64/mingw64/lib/libsqlite3.dll.a C$:/msys64/mingw64/lib/libsqlite3.dll.a C$:/msys64/mingw64/lib/libQt6Widgets.dll.a C$:/msys64/mingw64/lib/libQt6Gui.dll.a C$:/msys64/mingw64/lib/libQt6Core.dll.a || src/mlms_autogen src/mlms_autogen_timestamp_deps
+build src/mlms.exe: CXX_EXECUTABLE_LINKER__mlms_ src/CMakeFiles/mlms.dir/mlms_autogen/mocs_compilation.cpp.obj src/CMakeFiles/mlms.dir/main.cpp.obj src/CMakeFiles/mlms.dir/domain/User.cpp.obj src/CMakeFiles/mlms.dir/ui/LoginWindow.cpp.obj src/CMakeFiles/mlms.dir/ui/DashboardWindow.cpp.obj | C$:/msys64/mingw64/lib/libsqlite3.dll.a C$:/msys64/mingw64/lib/libsqlite3.dll.a C$:/msys64/mingw64/lib/libQt6Widgets.dll.a C$:/msys64/mingw64/lib/libQt6Gui.dll.a C$:/msys64/mingw64/lib/libQt6Core.dll.a || src/mlms_autogen src/mlms_autogen_timestamp_deps
   LINK_LIBRARIES = C:/msys64/mingw64/lib/libsqlite3.dll.a  -largon2  C:/msys64/mingw64/lib/libsqlite3.dll.a  -largon2  C:/msys64/mingw64/lib/libQt6Widgets.dll.a  C:/msys64/mingw64/lib/libQt6Gui.dll.a  C:/msys64/mingw64/lib/libQt6Core.dll.a  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lmpr  -luserenv  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = src\CMakeFiles\mlms.dir
   POST_BUILD = cd .
