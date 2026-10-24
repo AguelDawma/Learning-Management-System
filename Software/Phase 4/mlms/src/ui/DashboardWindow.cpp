@@ -1,4 +1,5 @@
 #include "DashboardWindow.hpp"
+#include "AssignmentDialog.hpp"
 #include "../data/AssignmentRepository.hpp"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -15,14 +16,12 @@ DashboardWindow::DashboardWindow(std::unique_ptr<User> user, sqlite3* db, QWidge
 
     auto* mainLayout = new QVBoxLayout(this);
 
-    // Welcome Header
     QString roleStr = (user_->role() == Role::STUDENT) ? "Student" : 
                       (user_->role() == Role::LECTURER) ? "Lecturer" : "Administrator";
     auto* welcomeLabel = new QLabel(QString("Welcome, %1 (%2)").arg(QString::fromStdString(user_->fullName()), roleStr), this);
     welcomeLabel->setStyleSheet("font-weight: bold; font-size: 14pt; margin-bottom: 5px;");
     mainLayout->addWidget(welcomeLabel);
 
-    // Tab Widget for Flexible Navigation
     tabWidget_ = new QTabWidget(this);
     mainLayout->addWidget(tabWidget_);
 
@@ -37,7 +36,6 @@ DashboardWindow::DashboardWindow(std::unique_ptr<User> user, sqlite3* db, QWidge
 }
 
 void DashboardWindow::setupStudentUI() {
-    // Tab 1: Assignments View
     auto* assignmentsTab = new QWidget();
     auto* tab1Layout = new QVBoxLayout(assignmentsTab);
 
@@ -61,7 +59,6 @@ void DashboardWindow::setupStudentUI() {
 
     tabWidget_->addTab(assignmentsTab, "Assignments");
 
-    // Tab 2: Grades View
     auto* gradesTab = new QWidget();
     auto* tab2Layout = new QVBoxLayout(gradesTab);
     tab2Layout->addWidget(new QLabel("Your graded submissions and feedback will appear here.", this));
@@ -75,6 +72,11 @@ void DashboardWindow::setupLecturerUI() {
     
     auto* createButton = new QPushButton("Create New Assignment", this);
     tabLayout->addWidget(createButton);
+
+    connect(createButton, &QPushButton::clicked, [this]() {
+        AssignmentDialog dialog(db_, user_->id(), this);
+        dialog.exec();
+    });
 
     tabWidget_->addTab(manageTab, "Manage Assignments");
 }

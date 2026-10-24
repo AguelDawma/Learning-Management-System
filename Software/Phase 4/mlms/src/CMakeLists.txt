@@ -7,6 +7,8 @@ add_executable(mlms
     domain/User.cpp
     ui/LoginWindow.cpp
     ui/DashboardWindow.cpp
+    ui/AssignmentDialog.cpp
+    ui/AssignmentDialog.hpp
 )
 
 target_link_libraries(mlms PRIVATE

@@ -1,51 +1,27 @@
 # ninja log v7
-1014	4298	8145011052984817	src/CMakeFiles/mlms.dir/main.cpp.obj	2952a4a414047d07
-43	535	8145025282691427	build.ninja	df93b196c3a188a5
-43	535	8145025282575521	C:/Users/thape/LMS/Software/Phase 4/mlms/build/cmake_install.cmake	df93b196c3a188a5
-43	535	8145025282691427	C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/cmake_install.cmake	df93b196c3a188a5
-1023	1691	8145011053045081	src/CMakeFiles/mlms.dir/domain/User.cpp.obj	6bd0af1e51e767e0
-4447	4806	8145011087297979	src/mlms.exe	ed8776fc5be23a3d
-1033	4447	8145011053145521	src/CMakeFiles/mlms.dir/ui/LoginWindow.cpp.obj	8f4be2d329c8b927
-72	982	8145022911391243	src/mlms_autogen/timestamp	ff613b663fbda4d2
-72	982	8145022911391243	src/mlms_autogen/mocs_compilation.cpp	ff613b663fbda4d2
-72	982	8145022911391243	C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/timestamp	ff613b663fbda4d2
-72	982	8145022911391243	C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/mocs_compilation.cpp	ff613b663fbda4d2
-1006	4218	8145011052849352	src/CMakeFiles/mlms.dir/mlms_autogen/mocs_compilation.cpp.obj	f0e0bbd5ed265f50
-67	834	8145025292580231	src/mlms_autogen/timestamp	ff613b663fbda4d2
-67	834	8145025292580231	src/mlms_autogen/mocs_compilation.cpp	ff613b663fbda4d2
-67	834	8145025292580231	C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/timestamp	ff613b663fbda4d2
-67	834	8145025292580231	C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/mocs_compilation.cpp	ff613b663fbda4d2
-835	4866	8145025293331677	src/CMakeFiles/mlms.dir/mlms_autogen/mocs_compilation.cpp.obj	f0e0bbd5ed265f50
-842	4888	8145025293412408	src/CMakeFiles/mlms.dir/main.cpp.obj	2952a4a414047d07
-850	5073	8145025293494900	src/CMakeFiles/mlms.dir/ui/LoginWindow.cpp.obj	8f4be2d329c8b927
-55	287	8145025933580603	src/mlms_autogen/timestamp	ff613b663fbda4d2
-55	287	8145025933580603	src/mlms_autogen/mocs_compilation.cpp	ff613b663fbda4d2
-55	287	8145025933580603	C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/timestamp	ff613b663fbda4d2
-55	287	8145025933580603	C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/mocs_compilation.cpp	ff613b663fbda4d2
-288	2457	8145025935952718	src/CMakeFiles/mlms.dir/ui/DashboardWindow.cpp.obj	609710fdff851533
-2458	2676	8145025957678131	src/mlms.exe	6543b9d8b62844db
-46	261	8145029231182697	src/mlms_autogen/timestamp	ff613b663fbda4d2
-46	261	8145029231182697	src/mlms_autogen/mocs_compilation.cpp	ff613b663fbda4d2
-46	261	8145029231182697	C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/timestamp	ff613b663fbda4d2
-46	261	8145029231182697	C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/mocs_compilation.cpp	ff613b663fbda4d2
-262	2501	8145029233402064	src/CMakeFiles/mlms.dir/main.cpp.obj	2952a4a414047d07
-2501	2759	8145029255800112	src/mlms.exe	6543b9d8b62844db
-58	282	8145038531332107	src/mlms_autogen/timestamp	ff613b663fbda4d2
-58	282	8145038531332107	src/mlms_autogen/mocs_compilation.cpp	ff613b663fbda4d2
-58	282	8145038531332107	C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/timestamp	ff613b663fbda4d2
-58	282	8145038531332107	C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/mocs_compilation.cpp	ff613b663fbda4d2
-283	2659	8145038533634722	src/CMakeFiles/mlms.dir/main.cpp.obj	2952a4a414047d07
-2660	2868	8145038557429746	src/mlms.exe	6543b9d8b62844db
-49	899	8145042366218325	src/mlms_autogen/timestamp	ff613b663fbda4d2
-49	899	8145042366218325	src/mlms_autogen/mocs_compilation.cpp	ff613b663fbda4d2
-49	899	8145042366218325	C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/timestamp	ff613b663fbda4d2
-49	899	8145042366218325	C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/mocs_compilation.cpp	ff613b663fbda4d2
-900	4680	8145042367025388	src/CMakeFiles/mlms.dir/mlms_autogen/mocs_compilation.cpp.obj	f0e0bbd5ed265f50
-920	5041	8145042367196140	src/CMakeFiles/mlms.dir/ui/LoginWindow.cpp.obj	8f4be2d329c8b927
-930	5176	8145042367317005	src/CMakeFiles/mlms.dir/ui/DashboardWindow.cpp.obj	609710fdff851533
-47	263	8145043270711498	src/mlms_autogen/timestamp	ff613b663fbda4d2
-47	263	8145043270711498	src/mlms_autogen/mocs_compilation.cpp	ff613b663fbda4d2
-47	263	8145043270711498	C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/timestamp	ff613b663fbda4d2
-47	263	8145043270711498	C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/mocs_compilation.cpp	ff613b663fbda4d2
 264	2530	8145043272883813	src/CMakeFiles/mlms.dir/main.cpp.obj	2952a4a414047d07
+43	535	8145050147308260	build.ninja	df93b196c3a188a5
+43	535	8145050147227178	C:/Users/thape/LMS/Software/Phase 4/mlms/build/cmake_install.cmake	df93b196c3a188a5
+43	535	8145050147283790	C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/cmake_install.cmake	df93b196c3a188a5
+1023	1691	8145011053045081	src/CMakeFiles/mlms.dir/domain/User.cpp.obj	6bd0af1e51e767e0
 2530	2742	8145043295627456	src/mlms.exe	6543b9d8b62844db
+920	5041	8145042367196140	src/CMakeFiles/mlms.dir/ui/LoginWindow.cpp.obj	8f4be2d329c8b927
+53	278	8145049604615292	src/mlms_autogen/timestamp	ff613b663fbda4d2
+53	278	8145049604615292	src/mlms_autogen/mocs_compilation.cpp	ff613b663fbda4d2
+53	278	8145049604615292	C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/timestamp	ff613b663fbda4d2
+53	278	8145049604615292	C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/mocs_compilation.cpp	ff613b663fbda4d2
+900	4680	8145042367025388	src/CMakeFiles/mlms.dir/mlms_autogen/mocs_compilation.cpp.obj	f0e0bbd5ed265f50
+279	2679	8145049606934987	src/CMakeFiles/mlms.dir/ui/DashboardWindow.cpp.obj	609710fdff851533
+76	849	8145050157024699	src/mlms_autogen/timestamp	ff613b663fbda4d2
+76	849	8145050157024699	src/mlms_autogen/mocs_compilation.cpp	ff613b663fbda4d2
+76	849	8145050157024699	C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/timestamp	ff613b663fbda4d2
+76	849	8145050157024699	C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/mocs_compilation.cpp	ff613b663fbda4d2
+850	3439	8145050157939964	src/CMakeFiles/mlms.dir/mlms_autogen/mocs_compilation.cpp.obj	f0e0bbd5ed265f50
+863	3590	8145050158102965	src/CMakeFiles/mlms.dir/ui/AssignmentDialog.cpp.obj	87f1a9fe854cbc45
+3590	3835	8145050185379904	src/mlms.exe	82137bed7035d6f0
+50	273	8145051856974715	src/mlms_autogen/timestamp	ff613b663fbda4d2
+50	273	8145051856974715	src/mlms_autogen/mocs_compilation.cpp	ff613b663fbda4d2
+50	273	8145051856974715	C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/timestamp	ff613b663fbda4d2
+50	273	8145051856974715	C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/mocs_compilation.cpp	ff613b663fbda4d2
+274	2534	8145051859214043	src/CMakeFiles/mlms.dir/main.cpp.obj	2952a4a414047d07
+2534	2765	8145051881739243	src/mlms.exe	82137bed7035d6f0

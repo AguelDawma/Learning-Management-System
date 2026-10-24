@@ -56,6 +56,12 @@ int main(int argc, char* argv[]) {
                              "VALUES (1, 'student1', 'Jane Doe', 'STUDENT', '" + hash + "', 1);";
     sqlite3_exec(db, insertUser.c_str(), nullptr, nullptr, nullptr);
 
+    // Insert a test lecturer user ("lecturer1" / "password123")
+    std::string lecturerHash = hashPassword("password123");
+    std::string insertLecturer = "INSERT INTO app_user(user_id, username, full_name, role, password_hash, is_active) "
+                                 "VALUES (2, 'lecturer1', 'Dr. Smith', 'LECTURER', '" + lecturerHash + "', 1);";
+    sqlite3_exec(db, insertLecturer.c_str(), nullptr, nullptr, nullptr);
+
     // Initialize repositories and test assignment insertion
     UserRepository userRepo(db);
     AssignmentRepository assignmentRepo(db);

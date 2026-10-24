@@ -19,6 +19,12 @@
 			null
 		],
 		[
+			"C:/Users/thape/LMS/Software/Phase 4/mlms/src/ui/AssignmentDialog.hpp",
+			"Mu",
+			"UYX5XTB5RZ/moc_AssignmentDialog.cpp",
+			null
+		],
+		[
 			"C:/Users/thape/LMS/Software/Phase 4/mlms/src/ui/DashboardWindow.hpp",
 			"Mu",
 			"UYX5XTB5RZ/moc_DashboardWindow.cpp",
@@ -110,6 +116,11 @@
 			null
 		],
 		[ "C:/Users/thape/LMS/Software/Phase 4/mlms/src/main.cpp", "Mu", null ],
+		[
+			"C:/Users/thape/LMS/Software/Phase 4/mlms/src/ui/AssignmentDialog.cpp",
+			"Mu",
+			null
+		],
 		[
 			"C:/Users/thape/LMS/Software/Phase 4/mlms/src/ui/DashboardWindow.cpp",
 			"Mu",

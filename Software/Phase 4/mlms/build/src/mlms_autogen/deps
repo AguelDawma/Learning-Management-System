@@ -7,6 +7,8 @@ mlms_autogen/timestamp: \
 	C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/domain/UserFactory.hpp \
 	C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/main.cpp \
 	C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/services/AuthService.hpp \
+	C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/ui/AssignmentDialog.cpp \
+	C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/ui/AssignmentDialog.hpp \
 	C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/ui/DashboardWindow.cpp \
 	C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/ui/DashboardWindow.hpp \
 	C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/ui/LoginWindow.cpp \
@@ -379,7 +381,9 @@ mlms_autogen/timestamp: \
 	C:/msys64/mingw64/include/qt6/QtGui/qtransform.h \
 	C:/msys64/mingw64/include/qt6/QtGui/qwindowdefs.h \
 	C:/msys64/mingw64/include/qt6/QtGui/qwindowdefs_win.h \
+	C:/msys64/mingw64/include/qt6/QtWidgets/QDialog \
 	C:/msys64/mingw64/include/qt6/QtWidgets/QWidget \
+	C:/msys64/mingw64/include/qt6/QtWidgets/qdialog.h \
 	C:/msys64/mingw64/include/qt6/QtWidgets/qsizepolicy.h \
 	C:/msys64/mingw64/include/qt6/QtWidgets/qtwidgets-config.h \
 	C:/msys64/mingw64/include/qt6/QtWidgets/qtwidgetsexports.h \
