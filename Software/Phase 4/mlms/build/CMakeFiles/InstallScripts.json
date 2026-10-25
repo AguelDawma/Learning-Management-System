@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/thape/LMS/Software/Phase 4/mlms/build/cmake_install.cmake",
+		"C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
