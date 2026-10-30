@@ -1,8 +1,16 @@
 C:/Users/thape/LMS/Software/Phase\ 4/mlms/build/src/mlms_autogen/UYX5XTB5RZ/moc_LoginWindow.cpp: C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/ui/LoginWindow.hpp \
   C:/Users/thape/LMS/Software/Phase\ 4/mlms/build/src/mlms_autogen/moc_predefs.h \
-  C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/data/UserRepository.hpp \
+  C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/data/Repositories.hpp \
+  C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/domain/Assignment.hpp \
+  C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/domain/AuditEntry.hpp \
+  C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/domain/DateTime.hpp \
+  C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/domain/LatePenaltyPolicy.hpp \
+  C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/domain/Mark.hpp \
+  C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/domain/Organisation.hpp \
+  C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/domain/Submission.hpp \
   C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/domain/User.hpp \
   C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/domain/UserFactory.hpp \
+  C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/infrastructure/Infrastructure.hpp \
   C:/Users/thape/LMS/Software/Phase\ 4/mlms/src/services/AuthService.hpp \
   C:/msys64/mingw64/include/_mingw.h \
   C:/msys64/mingw64/include/_mingw_locale.h \
@@ -12,7 +20,6 @@ C:/Users/thape/LMS/Software/Phase\ 4/mlms/build/src/mlms_autogen/UYX5XTB5RZ/moc_
   C:/msys64/mingw64/include/_mingw_stat64.h \
   C:/msys64/mingw64/include/_mingw_stdarg.h \
   C:/msys64/mingw64/include/_timeval.h \
-  C:/msys64/mingw64/include/argon2.h \
   C:/msys64/mingw64/include/assert.h \
   C:/msys64/mingw64/include/c++/16.2.0/algorithm \
   C:/msys64/mingw64/include/c++/16.2.0/array \
@@ -380,7 +387,6 @@ C:/Users/thape/LMS/Software/Phase\ 4/mlms/build/src/mlms_autogen/UYX5XTB5RZ/moc_
   C:/msys64/mingw64/include/qt6/QtWidgets/qwidget.h \
   C:/msys64/mingw64/include/sched.h \
   C:/msys64/mingw64/include/signal.h \
-  C:/msys64/mingw64/include/sqlite3.h \
   C:/msys64/mingw64/include/stdarg.h \
   C:/msys64/mingw64/include/stddef.h \
   C:/msys64/mingw64/include/stdint.h \

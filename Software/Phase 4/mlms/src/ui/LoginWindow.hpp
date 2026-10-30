@@ -1,21 +1,25 @@
 #pragma once
 
+#include "services/AuthService.hpp"
+
 #include <QWidget>
-#include "../services/AuthService.hpp"
-#include <sqlite3.h>
 
 class QLineEdit;
-class QPushButton;
+class QLabel;
 
 class LoginWindow : public QWidget {
     Q_OBJECT
-    AuthService& authService_;
-    sqlite3* db_;
+    AuthService& auth_;
     QLineEdit* usernameEdit_;
     QLineEdit* passwordEdit_;
+    QLabel* errorLabel_;
 
 public:
-    explicit LoginWindow(AuthService& authService, sqlite3* db, QWidget* parent = nullptr);
+    explicit LoginWindow(AuthService& auth, QWidget* parent = nullptr);
+
+signals:
+    // Ownership of the user passes to the receiver.
+    void loggedIn(User* user, bool mustChangePassword);
 
 private slots:
     void handleLogin();

@@ -39,13 +39,21 @@ template <> constexpr inline auto LoginWindow::qt_create_metaobjectdata<qt_meta_
     namespace QMC = QtMocConstants;
     QtMocHelpers::StringRefStorage qt_stringData {
         "LoginWindow",
-        "handleLogin",
-        ""
+        "loggedIn",
+        "",
+        "User*",
+        "user",
+        "mustChangePassword",
+        "handleLogin"
     };
 
     QtMocHelpers::UintData qt_methods {
+        // Signal 'loggedIn'
+        QtMocHelpers::SignalData<void(User *, bool)>(1, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 3, 4 }, { QMetaType::Bool, 5 },
+        }}),
         // Slot 'handleLogin'
-        QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -69,11 +77,15 @@ void LoginWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
     auto *_t = static_cast<LoginWindow *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->handleLogin(); break;
+        case 0: _t->loggedIn((*reinterpret_cast<std::add_pointer_t<User*>>(_a[1])),(*reinterpret_cast<std::add_pointer_t<bool>>(_a[2]))); break;
+        case 1: _t->handleLogin(); break;
         default: ;
         }
     }
-    (void)_a;
+    if (_c == QMetaObject::IndexOfMethod) {
+        if (QtMocHelpers::indexOfMethod<void (LoginWindow::*)(User * , bool )>(_a, &LoginWindow::loggedIn, 0))
+            return;
+    }
 }
 
 const QMetaObject *LoginWindow::metaObject() const
@@ -95,15 +107,21 @@ int LoginWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 2;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 2)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
+}
+
+// SIGNAL 0
+void LoginWindow::loggedIn(User * _t1, bool _t2)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 0, nullptr, _t1, _t2);
 }
 QT_WARNING_POP

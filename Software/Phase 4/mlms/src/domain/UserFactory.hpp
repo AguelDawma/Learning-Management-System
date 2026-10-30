@@ -1,25 +1,29 @@
 #pragma once
 
+#include "DateTime.hpp"
 #include "User.hpp"
-#include <memory>
-#include <stdexcept>
 
+#include <memory>
+#include <optional>
+#include <string>
+
+// One row of app_user (plus the department an HoD heads), as read by the repository.
+struct UserRecord {
+    int id = 0;
+    std::string username;
+    std::string fullName;
+    Role role = Role::STUDENT;
+    std::string passwordHash;
+    bool active = true;
+    int failedAttempts = 0;
+    std::optional<DateTime> lockedUntil;
+    bool mustChangePassword = false;
+    int departmentId = 0;
+};
+
+// Factory pattern: builds the right User subclass from the role column so no
+// other code needs a switch on role.
 class UserFactory {
 public:
-    static std::unique_ptr<User> create(Role role, int id, const std::string& username, 
-                                        const std::string& fullName, const std::string& passwordHash, 
-                                        bool active, int departmentId = 0) {
-        switch (role) {
-            case Role::STUDENT:
-                return std::make_unique<Student>(id, username, fullName, passwordHash, active);
-            case Role::LECTURER:
-                return std::make_unique<Lecturer>(id, username, fullName, passwordHash, active);
-            case Role::HOD:
-                return std::make_unique<HeadOfDepartment>(id, username, fullName, passwordHash, active, departmentId);
-            case Role::ADMINISTRATOR:
-                return std::make_unique<Administrator>(id, username, fullName, passwordHash, active);
-            default:
-                throw std::invalid_argument("Unknown user role");
-        }
-    }
+    static std::unique_ptr<User> create(Role role, const UserRecord& row);
 };

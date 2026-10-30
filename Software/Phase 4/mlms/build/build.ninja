@@ -12,7 +12,7 @@
 
 # =============================================================================
 # Project: mlms
-# Configurations: 
+# Configurations: Debug
 # =============================================================================
 
 #############################################
@@ -20,6 +20,11 @@
 
 ninja_required_version = 1.5
 
+
+#############################################
+# Set configuration variable for custom commands.
+
+CONFIGURATION = Debug
 # =============================================================================
 # Include auxiliary files.
 
@@ -35,6 +40,18 @@ include CMakeFiles/rules.ninja
 # Logical path to working directory; prefix for absolute paths.
 
 cmake_ninja_workdir = C$:/Users/thape/LMS/Software/Phase$ 4/mlms/build/
+
+#############################################
+# Utility command for test
+
+build CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\thape\LMS\Software\Phase 4\mlms\build" && C:\msys64\mingw64\bin\ctest.exe "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test: phony CMakeFiles/test.util
+
 
 #############################################
 # Utility command for edit_cache
@@ -64,75 +81,383 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 # =============================================================================
+# Object build statements for STATIC_LIBRARY target mlms_core
+
+
+#############################################
+# Order-only phony target for mlms_core
+
+build cmake_object_order_depends_target_mlms_core: phony || .
+
+build src/CMakeFiles/mlms_core.dir/domain/Assignment.cpp.obj: CXX_COMPILER__mlms_core_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/domain/Assignment.cpp || cmake_object_order_depends_target_mlms_core
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\mlms_core.dir\domain\Assignment.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/generated"
+  OBJECT_DIR = src\CMakeFiles\mlms_core.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_core.dir\domain
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_core.dir
+
+build src/CMakeFiles/mlms_core.dir/domain/DateTime.cpp.obj: CXX_COMPILER__mlms_core_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/domain/DateTime.cpp || cmake_object_order_depends_target_mlms_core
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\mlms_core.dir\domain\DateTime.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/generated"
+  OBJECT_DIR = src\CMakeFiles\mlms_core.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_core.dir\domain
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_core.dir
+
+build src/CMakeFiles/mlms_core.dir/domain/LatePenaltyPolicy.cpp.obj: CXX_COMPILER__mlms_core_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/domain/LatePenaltyPolicy.cpp || cmake_object_order_depends_target_mlms_core
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\mlms_core.dir\domain\LatePenaltyPolicy.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/generated"
+  OBJECT_DIR = src\CMakeFiles\mlms_core.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_core.dir\domain
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_core.dir
+
+build src/CMakeFiles/mlms_core.dir/domain/Mark.cpp.obj: CXX_COMPILER__mlms_core_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/domain/Mark.cpp || cmake_object_order_depends_target_mlms_core
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\mlms_core.dir\domain\Mark.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/generated"
+  OBJECT_DIR = src\CMakeFiles\mlms_core.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_core.dir\domain
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_core.dir
+
+build src/CMakeFiles/mlms_core.dir/domain/Submission.cpp.obj: CXX_COMPILER__mlms_core_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/domain/Submission.cpp || cmake_object_order_depends_target_mlms_core
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\mlms_core.dir\domain\Submission.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/generated"
+  OBJECT_DIR = src\CMakeFiles\mlms_core.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_core.dir\domain
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_core.dir
+
+build src/CMakeFiles/mlms_core.dir/domain/User.cpp.obj: CXX_COMPILER__mlms_core_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/domain/User.cpp || cmake_object_order_depends_target_mlms_core
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\mlms_core.dir\domain\User.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/generated"
+  OBJECT_DIR = src\CMakeFiles\mlms_core.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_core.dir\domain
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_core.dir
+
+build src/CMakeFiles/mlms_core.dir/domain/UserFactory.cpp.obj: CXX_COMPILER__mlms_core_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/domain/UserFactory.cpp || cmake_object_order_depends_target_mlms_core
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\mlms_core.dir\domain\UserFactory.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/generated"
+  OBJECT_DIR = src\CMakeFiles\mlms_core.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_core.dir\domain
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_core.dir
+
+build src/CMakeFiles/mlms_core.dir/domain/Validation.cpp.obj: CXX_COMPILER__mlms_core_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/domain/Validation.cpp || cmake_object_order_depends_target_mlms_core
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\mlms_core.dir\domain\Validation.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/generated"
+  OBJECT_DIR = src\CMakeFiles\mlms_core.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_core.dir\domain
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_core.dir
+
+build src/CMakeFiles/mlms_core.dir/data/Database.cpp.obj: CXX_COMPILER__mlms_core_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/data/Database.cpp || cmake_object_order_depends_target_mlms_core
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\mlms_core.dir\data\Database.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/generated"
+  OBJECT_DIR = src\CMakeFiles\mlms_core.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_core.dir\data
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_core.dir
+
+build src/CMakeFiles/mlms_core.dir/data/FileStore.cpp.obj: CXX_COMPILER__mlms_core_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/data/FileStore.cpp || cmake_object_order_depends_target_mlms_core
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\mlms_core.dir\data\FileStore.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/generated"
+  OBJECT_DIR = src\CMakeFiles\mlms_core.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_core.dir\data
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_core.dir
+
+build src/CMakeFiles/mlms_core.dir/data/SqliteRepositories.cpp.obj: CXX_COMPILER__mlms_core_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/data/SqliteRepositories.cpp || cmake_object_order_depends_target_mlms_core
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\mlms_core.dir\data\SqliteRepositories.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/generated"
+  OBJECT_DIR = src\CMakeFiles\mlms_core.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_core.dir\data
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_core.dir
+
+build src/CMakeFiles/mlms_core.dir/infrastructure/Infrastructure.cpp.obj: CXX_COMPILER__mlms_core_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/infrastructure/Infrastructure.cpp || cmake_object_order_depends_target_mlms_core
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\mlms_core.dir\infrastructure\Infrastructure.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/generated"
+  OBJECT_DIR = src\CMakeFiles\mlms_core.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_core.dir\infrastructure
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_core.dir
+
+build src/CMakeFiles/mlms_core.dir/infrastructure/Sha256.cpp.obj: CXX_COMPILER__mlms_core_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/infrastructure/Sha256.cpp || cmake_object_order_depends_target_mlms_core
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\mlms_core.dir\infrastructure\Sha256.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/generated"
+  OBJECT_DIR = src\CMakeFiles\mlms_core.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_core.dir\infrastructure
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_core.dir
+
+build src/CMakeFiles/mlms_core.dir/services/AdminService.cpp.obj: CXX_COMPILER__mlms_core_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/services/AdminService.cpp || cmake_object_order_depends_target_mlms_core
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\mlms_core.dir\services\AdminService.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/generated"
+  OBJECT_DIR = src\CMakeFiles\mlms_core.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_core.dir\services
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_core.dir
+
+build src/CMakeFiles/mlms_core.dir/services/AssignmentService.cpp.obj: CXX_COMPILER__mlms_core_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/services/AssignmentService.cpp || cmake_object_order_depends_target_mlms_core
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\mlms_core.dir\services\AssignmentService.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/generated"
+  OBJECT_DIR = src\CMakeFiles\mlms_core.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_core.dir\services
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_core.dir
+
+build src/CMakeFiles/mlms_core.dir/services/AuditService.cpp.obj: CXX_COMPILER__mlms_core_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/services/AuditService.cpp || cmake_object_order_depends_target_mlms_core
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\mlms_core.dir\services\AuditService.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/generated"
+  OBJECT_DIR = src\CMakeFiles\mlms_core.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_core.dir\services
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_core.dir
+
+build src/CMakeFiles/mlms_core.dir/services/AuthService.cpp.obj: CXX_COMPILER__mlms_core_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/services/AuthService.cpp || cmake_object_order_depends_target_mlms_core
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\mlms_core.dir\services\AuthService.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/generated"
+  OBJECT_DIR = src\CMakeFiles\mlms_core.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_core.dir\services
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_core.dir
+
+build src/CMakeFiles/mlms_core.dir/services/Bootstrap.cpp.obj: CXX_COMPILER__mlms_core_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/services/Bootstrap.cpp || cmake_object_order_depends_target_mlms_core
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\mlms_core.dir\services\Bootstrap.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/generated"
+  OBJECT_DIR = src\CMakeFiles\mlms_core.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_core.dir\services
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_core.dir
+
+build src/CMakeFiles/mlms_core.dir/services/MarkEvents.cpp.obj: CXX_COMPILER__mlms_core_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/services/MarkEvents.cpp || cmake_object_order_depends_target_mlms_core
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\mlms_core.dir\services\MarkEvents.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/generated"
+  OBJECT_DIR = src\CMakeFiles\mlms_core.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_core.dir\services
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_core.dir
+
+build src/CMakeFiles/mlms_core.dir/services/MarkingService.cpp.obj: CXX_COMPILER__mlms_core_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/services/MarkingService.cpp || cmake_object_order_depends_target_mlms_core
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\mlms_core.dir\services\MarkingService.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/generated"
+  OBJECT_DIR = src\CMakeFiles\mlms_core.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_core.dir\services
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_core.dir
+
+build src/CMakeFiles/mlms_core.dir/services/MarkingSheet.cpp.obj: CXX_COMPILER__mlms_core_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/services/MarkingSheet.cpp || cmake_object_order_depends_target_mlms_core
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\mlms_core.dir\services\MarkingSheet.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/generated"
+  OBJECT_DIR = src\CMakeFiles\mlms_core.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_core.dir\services
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_core.dir
+
+build src/CMakeFiles/mlms_core.dir/services/ModerationService.cpp.obj: CXX_COMPILER__mlms_core_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/services/ModerationService.cpp || cmake_object_order_depends_target_mlms_core
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\mlms_core.dir\services\ModerationService.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/generated"
+  OBJECT_DIR = src\CMakeFiles\mlms_core.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_core.dir\services
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_core.dir
+
+build src/CMakeFiles/mlms_core.dir/services/SubmissionService.cpp.obj: CXX_COMPILER__mlms_core_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/services/SubmissionService.cpp || cmake_object_order_depends_target_mlms_core
+  CONFIG = Debug
+  DEP_FILE = src\CMakeFiles\mlms_core.dir\services\SubmissionService.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/generated"
+  OBJECT_DIR = src\CMakeFiles\mlms_core.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_core.dir\services
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_core.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target mlms_core
+
+
+#############################################
+# Link the static library src\libmlms_core.a
+
+build src/libmlms_core.a: CXX_STATIC_LIBRARY_LINKER__mlms_core_Debug src/CMakeFiles/mlms_core.dir/domain/Assignment.cpp.obj src/CMakeFiles/mlms_core.dir/domain/DateTime.cpp.obj src/CMakeFiles/mlms_core.dir/domain/LatePenaltyPolicy.cpp.obj src/CMakeFiles/mlms_core.dir/domain/Mark.cpp.obj src/CMakeFiles/mlms_core.dir/domain/Submission.cpp.obj src/CMakeFiles/mlms_core.dir/domain/User.cpp.obj src/CMakeFiles/mlms_core.dir/domain/UserFactory.cpp.obj src/CMakeFiles/mlms_core.dir/domain/Validation.cpp.obj src/CMakeFiles/mlms_core.dir/data/Database.cpp.obj src/CMakeFiles/mlms_core.dir/data/FileStore.cpp.obj src/CMakeFiles/mlms_core.dir/data/SqliteRepositories.cpp.obj src/CMakeFiles/mlms_core.dir/infrastructure/Infrastructure.cpp.obj src/CMakeFiles/mlms_core.dir/infrastructure/Sha256.cpp.obj src/CMakeFiles/mlms_core.dir/services/AdminService.cpp.obj src/CMakeFiles/mlms_core.dir/services/AssignmentService.cpp.obj src/CMakeFiles/mlms_core.dir/services/AuditService.cpp.obj src/CMakeFiles/mlms_core.dir/services/AuthService.cpp.obj src/CMakeFiles/mlms_core.dir/services/Bootstrap.cpp.obj src/CMakeFiles/mlms_core.dir/services/MarkEvents.cpp.obj src/CMakeFiles/mlms_core.dir/services/MarkingService.cpp.obj src/CMakeFiles/mlms_core.dir/services/MarkingSheet.cpp.obj src/CMakeFiles/mlms_core.dir/services/ModerationService.cpp.obj src/CMakeFiles/mlms_core.dir/services/SubmissionService.cpp.obj
+  CONFIG = Debug
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = src\CMakeFiles\mlms_core.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = src\libmlms_core.a
+  TARGET_PDB = mlms_core.a.dbg
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_core.dir
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target mlms_ui
+
+
+#############################################
+# Order-only phony target for mlms_ui
+
+build cmake_object_order_depends_target_mlms_ui: phony || cmake_object_order_depends_target_mlms_core src/mlms_ui_autogen src/mlms_ui_autogen/mocs_compilation.cpp src/mlms_ui_autogen/timestamp src/mlms_ui_autogen_timestamp_deps
+
+build src/CMakeFiles/mlms_ui.dir/mlms_ui_autogen/mocs_compilation.cpp.obj: CXX_COMPILER__mlms_ui_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/build/src/mlms_ui_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_mlms_ui
+  CONFIG = Debug
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
+  DEP_FILE = src\CMakeFiles\mlms_ui.dir\mlms_ui_autogen\mocs_compilation.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_ui_autogen/include" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
+  OBJECT_DIR = src\CMakeFiles\mlms_ui.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_ui.dir\mlms_ui_autogen
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_ui.dir
+
+build src/CMakeFiles/mlms_ui.dir/ui/AdminView.cpp.obj: CXX_COMPILER__mlms_ui_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/ui/AdminView.cpp || cmake_object_order_depends_target_mlms_ui
+  CONFIG = Debug
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
+  DEP_FILE = src\CMakeFiles\mlms_ui.dir\ui\AdminView.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_ui_autogen/include" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
+  OBJECT_DIR = src\CMakeFiles\mlms_ui.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_ui.dir\ui
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_ui.dir
+
+build src/CMakeFiles/mlms_ui.dir/ui/Dialogs.cpp.obj: CXX_COMPILER__mlms_ui_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/ui/Dialogs.cpp || cmake_object_order_depends_target_mlms_ui
+  CONFIG = Debug
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
+  DEP_FILE = src\CMakeFiles\mlms_ui.dir\ui\Dialogs.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_ui_autogen/include" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
+  OBJECT_DIR = src\CMakeFiles\mlms_ui.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_ui.dir\ui
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_ui.dir
+
+build src/CMakeFiles/mlms_ui.dir/ui/HoDView.cpp.obj: CXX_COMPILER__mlms_ui_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/ui/HoDView.cpp || cmake_object_order_depends_target_mlms_ui
+  CONFIG = Debug
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
+  DEP_FILE = src\CMakeFiles\mlms_ui.dir\ui\HoDView.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_ui_autogen/include" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
+  OBJECT_DIR = src\CMakeFiles\mlms_ui.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_ui.dir\ui
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_ui.dir
+
+build src/CMakeFiles/mlms_ui.dir/ui/LecturerView.cpp.obj: CXX_COMPILER__mlms_ui_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/ui/LecturerView.cpp || cmake_object_order_depends_target_mlms_ui
+  CONFIG = Debug
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
+  DEP_FILE = src\CMakeFiles\mlms_ui.dir\ui\LecturerView.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_ui_autogen/include" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
+  OBJECT_DIR = src\CMakeFiles\mlms_ui.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_ui.dir\ui
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_ui.dir
+
+build src/CMakeFiles/mlms_ui.dir/ui/LoginWindow.cpp.obj: CXX_COMPILER__mlms_ui_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/ui/LoginWindow.cpp || cmake_object_order_depends_target_mlms_ui
+  CONFIG = Debug
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
+  DEP_FILE = src\CMakeFiles\mlms_ui.dir\ui\LoginWindow.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_ui_autogen/include" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
+  OBJECT_DIR = src\CMakeFiles\mlms_ui.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_ui.dir\ui
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_ui.dir
+
+build src/CMakeFiles/mlms_ui.dir/ui/MainWindow.cpp.obj: CXX_COMPILER__mlms_ui_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/ui/MainWindow.cpp || cmake_object_order_depends_target_mlms_ui
+  CONFIG = Debug
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
+  DEP_FILE = src\CMakeFiles\mlms_ui.dir\ui\MainWindow.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_ui_autogen/include" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
+  OBJECT_DIR = src\CMakeFiles\mlms_ui.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_ui.dir\ui
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_ui.dir
+
+build src/CMakeFiles/mlms_ui.dir/ui/StudentView.cpp.obj: CXX_COMPILER__mlms_ui_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/ui/StudentView.cpp || cmake_object_order_depends_target_mlms_ui
+  CONFIG = Debug
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
+  DEP_FILE = src\CMakeFiles\mlms_ui.dir\ui\StudentView.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_ui_autogen/include" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
+  OBJECT_DIR = src\CMakeFiles\mlms_ui.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_ui.dir\ui
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_ui.dir
+
+build src/CMakeFiles/mlms_ui.dir/ui/UiHelpers.cpp.obj: CXX_COMPILER__mlms_ui_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/ui/UiHelpers.cpp || cmake_object_order_depends_target_mlms_ui
+  CONFIG = Debug
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
+  DEP_FILE = src\CMakeFiles\mlms_ui.dir\ui\UiHelpers.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_ui_autogen/include" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
+  OBJECT_DIR = src\CMakeFiles\mlms_ui.dir
+  OBJECT_FILE_DIR = src\CMakeFiles\mlms_ui.dir\ui
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_ui.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target mlms_ui
+
+
+#############################################
+# Link the static library src\libmlms_ui.a
+
+build src/libmlms_ui.a: CXX_STATIC_LIBRARY_LINKER__mlms_ui_Debug src/CMakeFiles/mlms_ui.dir/mlms_ui_autogen/mocs_compilation.cpp.obj src/CMakeFiles/mlms_ui.dir/ui/AdminView.cpp.obj src/CMakeFiles/mlms_ui.dir/ui/Dialogs.cpp.obj src/CMakeFiles/mlms_ui.dir/ui/HoDView.cpp.obj src/CMakeFiles/mlms_ui.dir/ui/LecturerView.cpp.obj src/CMakeFiles/mlms_ui.dir/ui/LoginWindow.cpp.obj src/CMakeFiles/mlms_ui.dir/ui/MainWindow.cpp.obj src/CMakeFiles/mlms_ui.dir/ui/StudentView.cpp.obj src/CMakeFiles/mlms_ui.dir/ui/UiHelpers.cpp.obj || src/libmlms_core.a src/mlms_ui_autogen src/mlms_ui_autogen_timestamp_deps
+  CONFIG = Debug
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = src\CMakeFiles\mlms_ui.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = src\libmlms_ui.a
+  TARGET_PDB = mlms_ui.a.dbg
+  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms_ui.dir
+
+# =============================================================================
 # Object build statements for EXECUTABLE target mlms
 
 
 #############################################
 # Order-only phony target for mlms
 
-build cmake_object_order_depends_target_mlms: phony || src/mlms_autogen src/mlms_autogen/mocs_compilation.cpp src/mlms_autogen/timestamp src/mlms_autogen_timestamp_deps
+build cmake_object_order_depends_target_mlms: phony || cmake_object_order_depends_target_mlms_core cmake_object_order_depends_target_mlms_ui src/mlms_autogen src/mlms_autogen/mocs_compilation.cpp src/mlms_autogen/timestamp src/mlms_autogen_timestamp_deps
 
-build src/CMakeFiles/mlms.dir/mlms_autogen/mocs_compilation.cpp.obj: CXX_COMPILER__mlms_unscanned_ C$:/Users/thape/LMS/Software/Phase$ 4/mlms/build/src/mlms_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_mlms
-  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
+build src/CMakeFiles/mlms.dir/mlms_autogen/mocs_compilation.cpp.obj: CXX_COMPILER__mlms_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/build/src/mlms_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_mlms
+  CONFIG = Debug
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DPROJECT_VERSION=\"1.0.0\" -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
   DEP_FILE = src\CMakeFiles\mlms.dir\mlms_autogen\mocs_compilation.cpp.obj.d
-  FLAGS = -std=c++17 -Wall -Wextra -Wpedantic -Werror
-  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/include" -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/include" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
   OBJECT_DIR = src\CMakeFiles\mlms.dir
   OBJECT_FILE_DIR = src\CMakeFiles\mlms.dir\mlms_autogen
   TARGET_SUPPORT_DIR = src\CMakeFiles\mlms.dir
 
-build src/CMakeFiles/mlms.dir/main.cpp.obj: CXX_COMPILER__mlms_unscanned_ C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/main.cpp || cmake_object_order_depends_target_mlms
-  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
+build src/CMakeFiles/mlms.dir/main.cpp.obj: CXX_COMPILER__mlms_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/main.cpp || cmake_object_order_depends_target_mlms
+  CONFIG = Debug
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DPROJECT_VERSION=\"1.0.0\" -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
   DEP_FILE = src\CMakeFiles\mlms.dir\main.cpp.obj.d
-  FLAGS = -std=c++17 -Wall -Wextra -Wpedantic -Werror
-  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/include" -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/include" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
   OBJECT_DIR = src\CMakeFiles\mlms.dir
   OBJECT_FILE_DIR = src\CMakeFiles\mlms.dir
-  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms.dir
-
-build src/CMakeFiles/mlms.dir/domain/User.cpp.obj: CXX_COMPILER__mlms_unscanned_ C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/domain/User.cpp || cmake_object_order_depends_target_mlms
-  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
-  DEP_FILE = src\CMakeFiles\mlms.dir\domain\User.cpp.obj.d
-  FLAGS = -std=c++17 -Wall -Wextra -Wpedantic -Werror
-  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/include" -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
-  OBJECT_DIR = src\CMakeFiles\mlms.dir
-  OBJECT_FILE_DIR = src\CMakeFiles\mlms.dir\domain
-  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms.dir
-
-build src/CMakeFiles/mlms.dir/ui/LoginWindow.cpp.obj: CXX_COMPILER__mlms_unscanned_ C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/ui/LoginWindow.cpp || cmake_object_order_depends_target_mlms
-  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
-  DEP_FILE = src\CMakeFiles\mlms.dir\ui\LoginWindow.cpp.obj.d
-  FLAGS = -std=c++17 -Wall -Wextra -Wpedantic -Werror
-  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/include" -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
-  OBJECT_DIR = src\CMakeFiles\mlms.dir
-  OBJECT_FILE_DIR = src\CMakeFiles\mlms.dir\ui
-  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms.dir
-
-build src/CMakeFiles/mlms.dir/ui/DashboardWindow.cpp.obj: CXX_COMPILER__mlms_unscanned_ C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/ui/DashboardWindow.cpp || cmake_object_order_depends_target_mlms
-  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
-  DEP_FILE = src\CMakeFiles\mlms.dir\ui\DashboardWindow.cpp.obj.d
-  FLAGS = -std=c++17 -Wall -Wextra -Wpedantic -Werror
-  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/include" -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
-  OBJECT_DIR = src\CMakeFiles\mlms.dir
-  OBJECT_FILE_DIR = src\CMakeFiles\mlms.dir\ui
-  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms.dir
-
-build src/CMakeFiles/mlms.dir/ui/AssignmentDialog.cpp.obj: CXX_COMPILER__mlms_unscanned_ C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/ui/AssignmentDialog.cpp || cmake_object_order_depends_target_mlms
-  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
-  DEP_FILE = src\CMakeFiles\mlms.dir\ui\AssignmentDialog.cpp.obj.d
-  FLAGS = -std=c++17 -Wall -Wextra -Wpedantic -Werror
-  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/include" -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
-  OBJECT_DIR = src\CMakeFiles\mlms.dir
-  OBJECT_FILE_DIR = src\CMakeFiles\mlms.dir\ui
-  TARGET_SUPPORT_DIR = src\CMakeFiles\mlms.dir
-
-build src/CMakeFiles/mlms.dir/ui/SubmissionDialog.cpp.obj: CXX_COMPILER__mlms_unscanned_ C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/ui/SubmissionDialog.cpp || cmake_object_order_depends_target_mlms
-  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
-  DEP_FILE = src\CMakeFiles\mlms.dir\ui\SubmissionDialog.cpp.obj.d
-  FLAGS = -std=c++17 -Wall -Wextra -Wpedantic -Werror
-  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/include" -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui
-  OBJECT_DIR = src\CMakeFiles\mlms.dir
-  OBJECT_FILE_DIR = src\CMakeFiles\mlms.dir\ui
   TARGET_SUPPORT_DIR = src\CMakeFiles\mlms.dir
 
 
@@ -143,15 +468,30 @@ build src/CMakeFiles/mlms.dir/ui/SubmissionDialog.cpp.obj: CXX_COMPILER__mlms_un
 #############################################
 # Link the executable src\mlms.exe
 
-build src/mlms.exe: CXX_EXECUTABLE_LINKER__mlms_ src/CMakeFiles/mlms.dir/mlms_autogen/mocs_compilation.cpp.obj src/CMakeFiles/mlms.dir/main.cpp.obj src/CMakeFiles/mlms.dir/domain/User.cpp.obj src/CMakeFiles/mlms.dir/ui/LoginWindow.cpp.obj src/CMakeFiles/mlms.dir/ui/DashboardWindow.cpp.obj src/CMakeFiles/mlms.dir/ui/AssignmentDialog.cpp.obj src/CMakeFiles/mlms.dir/ui/SubmissionDialog.cpp.obj | C$:/msys64/mingw64/lib/libsqlite3.dll.a C$:/msys64/mingw64/lib/libsqlite3.dll.a C$:/msys64/mingw64/lib/libQt6Widgets.dll.a C$:/msys64/mingw64/lib/libQt6Gui.dll.a C$:/msys64/mingw64/lib/libQt6Core.dll.a || src/mlms_autogen src/mlms_autogen_timestamp_deps
-  LINK_LIBRARIES = C:/msys64/mingw64/lib/libsqlite3.dll.a  -largon2  C:/msys64/mingw64/lib/libsqlite3.dll.a  -largon2  C:/msys64/mingw64/lib/libQt6Widgets.dll.a  C:/msys64/mingw64/lib/libQt6Gui.dll.a  C:/msys64/mingw64/lib/libQt6Core.dll.a  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lmpr  -luserenv  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+build src/mlms.exe: CXX_EXECUTABLE_LINKER__mlms_Debug src/CMakeFiles/mlms.dir/mlms_autogen/mocs_compilation.cpp.obj src/CMakeFiles/mlms.dir/main.cpp.obj | src/libmlms_ui.a src/libmlms_core.a C$:/msys64/mingw64/lib/libsqlite3.dll.a C$:/msys64/mingw64/lib/libargon2.dll.a C$:/msys64/mingw64/lib/libQt6Widgets.dll.a C$:/msys64/mingw64/lib/libQt6Gui.dll.a C$:/msys64/mingw64/lib/libQt6Core.dll.a C$:/msys64/mingw64/lib/libQt6EntryPoint.a || src/libmlms_core.a src/libmlms_ui.a src/mlms_autogen src/mlms_autogen_timestamp_deps
+  CONFIG = Debug
+  FLAGS = -g
+  LINK_FLAGS = -mwindows
+  LINK_LIBRARIES = src/libmlms_ui.a  src/libmlms_core.a  C:/msys64/mingw64/lib/libsqlite3.dll.a  C:/msys64/mingw64/lib/libargon2.dll.a  C:/msys64/mingw64/lib/libQt6Widgets.dll.a  C:/msys64/mingw64/lib/libQt6Gui.dll.a  C:/msys64/mingw64/lib/libQt6Core.dll.a  -lmpr  -luserenv  -lmingw32  C:/msys64/mingw64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = src\CMakeFiles\mlms.dir
-  POST_BUILD = cd .
+  POST_BUILD = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\thape\LMS\Software\Phase 4\mlms\build\src" && C:\msys64\mingw64\bin\windeployqt6.exe --no-translations --no-system-d3d-compiler --no-opengl-sw "C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms.exe" && C:\msys64\mingw64\bin\cmake.exe "-DEXE=C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms.exe" -DSEARCH_DIR=C:/msys64/mingw64/bin -P "C:/Users/thape/LMS/Software/Phase 4/mlms/cmake/CopyRuntimeDlls.cmake""
   PRE_LINK = cd .
   TARGET_FILE = src\mlms.exe
   TARGET_IMPLIB = src\libmlms.dll.a
   TARGET_PDB = mlms.exe.dbg
   TARGET_SUPPORT_DIR = src\CMakeFiles\mlms.dir
+
+
+#############################################
+# Utility command for test
+
+build src/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\thape\LMS\Software\Phase 4\mlms\build\src" && C:\msys64\mingw64\bin\ctest.exe "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build src/test: phony src/CMakeFiles/test.util
 
 
 #############################################
@@ -178,9 +518,21 @@ build src/rebuild_cache: phony src/CMakeFiles/rebuild_cache.util
 
 
 #############################################
+# Utility command for mlms_ui_autogen_timestamp_deps
+
+build src/mlms_ui_autogen_timestamp_deps: phony src/libmlms_core.a
+
+
+#############################################
+# Utility command for mlms_ui_autogen
+
+build src/mlms_ui_autogen: phony src/CMakeFiles/mlms_ui_autogen src/mlms_ui_autogen/timestamp src/mlms_ui_autogen/mocs_compilation.cpp src/mlms_ui_autogen_timestamp_deps
+
+
+#############################################
 # Utility command for mlms_autogen_timestamp_deps
 
-build src/mlms_autogen_timestamp_deps: phony
+build src/mlms_autogen_timestamp_deps: phony src/libmlms_ui.a
 
 
 #############################################
@@ -190,23 +542,533 @@ build src/mlms_autogen: phony src/CMakeFiles/mlms_autogen src/mlms_autogen/times
 
 
 #############################################
+# Custom command for src\mlms_ui_autogen\timestamp
+
+build src/mlms_ui_autogen/timestamp src/mlms_ui_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}src/mlms_ui_autogen/timestamp ${cmake_ninja_workdir}src/mlms_ui_autogen/mocs_compilation.cpp: CUSTOM_COMMAND C$:/msys64/mingw64/share/qt6/bin/moc.exe C$:/msys64/mingw64/share/qt6/bin/uic.exe || src/libmlms_core.a src/mlms_ui_autogen_timestamp_deps
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\thape\LMS\Software\Phase 4\mlms\build\src" && C:\msys64\mingw64\bin\cmake.exe -E cmake_autogen "C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/CMakeFiles/mlms_ui_autogen.dir/AutogenInfo.json" Debug && C:\msys64\mingw64\bin\cmake.exe -E touch "C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_ui_autogen/timestamp" && C:\msys64\mingw64\bin\cmake.exe -E cmake_transform_depfile Ninja gccdepfile "C:/Users/thape/LMS/Software/Phase 4/mlms" "C:/Users/thape/LMS/Software/Phase 4/mlms/src" "C:/Users/thape/LMS/Software/Phase 4/mlms/build" "C:/Users/thape/LMS/Software/Phase 4/mlms/build/src" "C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_ui_autogen/deps" "C:/Users/thape/LMS/Software/Phase 4/mlms/build/CMakeFiles/d/dce251abfbabbbdcbe353672aff40055119a22ab4daa85cb5d7d731dd3b36879.d""
+  DESC = Automatic MOC and UIC for target mlms_ui
+  depfile = CMakeFiles\d\dce251abfbabbbdcbe353672aff40055119a22ab4daa85cb5d7d731dd3b36879.d
+  deps = gcc
+  restat = 1
+
+
+#############################################
 # Custom command for src\mlms_autogen\timestamp
 
-build src/mlms_autogen/timestamp src/mlms_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}src/mlms_autogen/timestamp ${cmake_ninja_workdir}src/mlms_autogen/mocs_compilation.cpp: CUSTOM_COMMAND C$:/msys64/mingw64/share/qt6/bin/moc.exe || src/mlms_autogen_timestamp_deps
-  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\thape\LMS\Software\Phase 4\mlms\build\src" && C:\msys64\mingw64\bin\cmake.exe -E cmake_autogen "C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/CMakeFiles/mlms_autogen.dir/AutogenInfo.json" "" && C:\msys64\mingw64\bin\cmake.exe -E touch "C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/timestamp" && C:\msys64\mingw64\bin\cmake.exe -E cmake_transform_depfile Ninja gccdepfile "C:/Users/thape/LMS/Software/Phase 4/mlms" "C:/Users/thape/LMS/Software/Phase 4/mlms/src" "C:/Users/thape/LMS/Software/Phase 4/mlms/build" "C:/Users/thape/LMS/Software/Phase 4/mlms/build/src" "C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/deps" "C:/Users/thape/LMS/Software/Phase 4/mlms/build/CMakeFiles/d/eb739addf2c957fd63b3e97f804850f89aefac99d9b8c1f02a9bfa2cf6e877f4.d""
-  DESC = Automatic MOC for target mlms
+build src/mlms_autogen/timestamp src/mlms_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}src/mlms_autogen/timestamp ${cmake_ninja_workdir}src/mlms_autogen/mocs_compilation.cpp: CUSTOM_COMMAND C$:/msys64/mingw64/share/qt6/bin/moc.exe C$:/msys64/mingw64/share/qt6/bin/uic.exe || src/libmlms_core.a src/libmlms_ui.a src/mlms_autogen_timestamp_deps src/mlms_ui_autogen src/mlms_ui_autogen_timestamp_deps
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\thape\LMS\Software\Phase 4\mlms\build\src" && C:\msys64\mingw64\bin\cmake.exe -E cmake_autogen "C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/CMakeFiles/mlms_autogen.dir/AutogenInfo.json" Debug && C:\msys64\mingw64\bin\cmake.exe -E touch "C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/timestamp" && C:\msys64\mingw64\bin\cmake.exe -E cmake_transform_depfile Ninja gccdepfile "C:/Users/thape/LMS/Software/Phase 4/mlms" "C:/Users/thape/LMS/Software/Phase 4/mlms/src" "C:/Users/thape/LMS/Software/Phase 4/mlms/build" "C:/Users/thape/LMS/Software/Phase 4/mlms/build/src" "C:/Users/thape/LMS/Software/Phase 4/mlms/build/src/mlms_autogen/deps" "C:/Users/thape/LMS/Software/Phase 4/mlms/build/CMakeFiles/d/eb739addf2c957fd63b3e97f804850f89aefac99d9b8c1f02a9bfa2cf6e877f4.d""
+  DESC = Automatic MOC and UIC for target mlms
   depfile = CMakeFiles\d\eb739addf2c957fd63b3e97f804850f89aefac99d9b8c1f02a9bfa2cf6e877f4.d
   deps = gcc
   restat = 1
 
 
 #############################################
+# Phony custom command for src\CMakeFiles\mlms_ui_autogen
+
+build src/CMakeFiles/mlms_ui_autogen | ${cmake_ninja_workdir}src/CMakeFiles/mlms_ui_autogen: phony src/mlms_ui_autogen/timestamp || src/libmlms_core.a src/mlms_ui_autogen_timestamp_deps
+
+
+#############################################
 # Phony custom command for src\CMakeFiles\mlms_autogen
 
-build src/CMakeFiles/mlms_autogen | ${cmake_ninja_workdir}src/CMakeFiles/mlms_autogen: phony src/mlms_autogen/timestamp || src/mlms_autogen_timestamp_deps
+build src/CMakeFiles/mlms_autogen | ${cmake_ninja_workdir}src/CMakeFiles/mlms_autogen: phony src/mlms_autogen/timestamp || src/libmlms_core.a src/libmlms_ui.a src/mlms_autogen_timestamp_deps src/mlms_ui_autogen src/mlms_ui_autogen_timestamp_deps
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/thape/LMS/Software/Phase 4/mlms/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target mlms_tests
+
+
+#############################################
+# Order-only phony target for mlms_tests
+
+build cmake_object_order_depends_target_mlms_tests: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main cmake_object_order_depends_target_mlms_core
+
+build tests/CMakeFiles/mlms_tests.dir/unit/DateTimeTest.cpp.obj: CXX_COMPILER__mlms_tests_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/tests/unit/DateTimeTest.cpp || cmake_object_order_depends_target_mlms_tests
+  CONFIG = Debug
+  DEFINES = -DMLMS_TEST_TMP_DIR="\"C:/Users/thape/LMS/Software/Phase 4/mlms/build/tests/tmp\""
+  DEP_FILE = tests\CMakeFiles\mlms_tests.dir\unit\DateTimeTest.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/tests" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest/include" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest"
+  OBJECT_DIR = tests\CMakeFiles\mlms_tests.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\mlms_tests.dir\unit
+  TARGET_SUPPORT_DIR = tests\CMakeFiles\mlms_tests.dir
+
+build tests/CMakeFiles/mlms_tests.dir/unit/DomainTest.cpp.obj: CXX_COMPILER__mlms_tests_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/tests/unit/DomainTest.cpp || cmake_object_order_depends_target_mlms_tests
+  CONFIG = Debug
+  DEFINES = -DMLMS_TEST_TMP_DIR="\"C:/Users/thape/LMS/Software/Phase 4/mlms/build/tests/tmp\""
+  DEP_FILE = tests\CMakeFiles\mlms_tests.dir\unit\DomainTest.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/tests" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest/include" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest"
+  OBJECT_DIR = tests\CMakeFiles\mlms_tests.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\mlms_tests.dir\unit
+  TARGET_SUPPORT_DIR = tests\CMakeFiles\mlms_tests.dir
+
+build tests/CMakeFiles/mlms_tests.dir/unit/PenaltyPolicyTest.cpp.obj: CXX_COMPILER__mlms_tests_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/tests/unit/PenaltyPolicyTest.cpp || cmake_object_order_depends_target_mlms_tests
+  CONFIG = Debug
+  DEFINES = -DMLMS_TEST_TMP_DIR="\"C:/Users/thape/LMS/Software/Phase 4/mlms/build/tests/tmp\""
+  DEP_FILE = tests\CMakeFiles\mlms_tests.dir\unit\PenaltyPolicyTest.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/tests" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest/include" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest"
+  OBJECT_DIR = tests\CMakeFiles\mlms_tests.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\mlms_tests.dir\unit
+  TARGET_SUPPORT_DIR = tests\CMakeFiles\mlms_tests.dir
+
+build tests/CMakeFiles/mlms_tests.dir/unit/SubmissionStateTest.cpp.obj: CXX_COMPILER__mlms_tests_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/tests/unit/SubmissionStateTest.cpp || cmake_object_order_depends_target_mlms_tests
+  CONFIG = Debug
+  DEFINES = -DMLMS_TEST_TMP_DIR="\"C:/Users/thape/LMS/Software/Phase 4/mlms/build/tests/tmp\""
+  DEP_FILE = tests\CMakeFiles\mlms_tests.dir\unit\SubmissionStateTest.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/tests" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest/include" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest"
+  OBJECT_DIR = tests\CMakeFiles\mlms_tests.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\mlms_tests.dir\unit
+  TARGET_SUPPORT_DIR = tests\CMakeFiles\mlms_tests.dir
+
+build tests/CMakeFiles/mlms_tests.dir/unit/InfrastructureTest.cpp.obj: CXX_COMPILER__mlms_tests_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/tests/unit/InfrastructureTest.cpp || cmake_object_order_depends_target_mlms_tests
+  CONFIG = Debug
+  DEFINES = -DMLMS_TEST_TMP_DIR="\"C:/Users/thape/LMS/Software/Phase 4/mlms/build/tests/tmp\""
+  DEP_FILE = tests\CMakeFiles\mlms_tests.dir\unit\InfrastructureTest.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/tests" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest/include" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest"
+  OBJECT_DIR = tests\CMakeFiles\mlms_tests.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\mlms_tests.dir\unit
+  TARGET_SUPPORT_DIR = tests\CMakeFiles\mlms_tests.dir
+
+build tests/CMakeFiles/mlms_tests.dir/integration/DatabaseTest.cpp.obj: CXX_COMPILER__mlms_tests_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/tests/integration/DatabaseTest.cpp || cmake_object_order_depends_target_mlms_tests
+  CONFIG = Debug
+  DEFINES = -DMLMS_TEST_TMP_DIR="\"C:/Users/thape/LMS/Software/Phase 4/mlms/build/tests/tmp\""
+  DEP_FILE = tests\CMakeFiles\mlms_tests.dir\integration\DatabaseTest.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/tests" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest/include" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest"
+  OBJECT_DIR = tests\CMakeFiles\mlms_tests.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\mlms_tests.dir\integration
+  TARGET_SUPPORT_DIR = tests\CMakeFiles\mlms_tests.dir
+
+build tests/CMakeFiles/mlms_tests.dir/integration/AuthServiceTest.cpp.obj: CXX_COMPILER__mlms_tests_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/tests/integration/AuthServiceTest.cpp || cmake_object_order_depends_target_mlms_tests
+  CONFIG = Debug
+  DEFINES = -DMLMS_TEST_TMP_DIR="\"C:/Users/thape/LMS/Software/Phase 4/mlms/build/tests/tmp\""
+  DEP_FILE = tests\CMakeFiles\mlms_tests.dir\integration\AuthServiceTest.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/tests" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest/include" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest"
+  OBJECT_DIR = tests\CMakeFiles\mlms_tests.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\mlms_tests.dir\integration
+  TARGET_SUPPORT_DIR = tests\CMakeFiles\mlms_tests.dir
+
+build tests/CMakeFiles/mlms_tests.dir/integration/AdminServiceTest.cpp.obj: CXX_COMPILER__mlms_tests_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/tests/integration/AdminServiceTest.cpp || cmake_object_order_depends_target_mlms_tests
+  CONFIG = Debug
+  DEFINES = -DMLMS_TEST_TMP_DIR="\"C:/Users/thape/LMS/Software/Phase 4/mlms/build/tests/tmp\""
+  DEP_FILE = tests\CMakeFiles\mlms_tests.dir\integration\AdminServiceTest.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/tests" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest/include" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest"
+  OBJECT_DIR = tests\CMakeFiles\mlms_tests.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\mlms_tests.dir\integration
+  TARGET_SUPPORT_DIR = tests\CMakeFiles\mlms_tests.dir
+
+build tests/CMakeFiles/mlms_tests.dir/integration/SubmissionServiceTest.cpp.obj: CXX_COMPILER__mlms_tests_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/tests/integration/SubmissionServiceTest.cpp || cmake_object_order_depends_target_mlms_tests
+  CONFIG = Debug
+  DEFINES = -DMLMS_TEST_TMP_DIR="\"C:/Users/thape/LMS/Software/Phase 4/mlms/build/tests/tmp\""
+  DEP_FILE = tests\CMakeFiles\mlms_tests.dir\integration\SubmissionServiceTest.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/tests" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest/include" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest"
+  OBJECT_DIR = tests\CMakeFiles\mlms_tests.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\mlms_tests.dir\integration
+  TARGET_SUPPORT_DIR = tests\CMakeFiles\mlms_tests.dir
+
+build tests/CMakeFiles/mlms_tests.dir/integration/MarkingWorkflowTest.cpp.obj: CXX_COMPILER__mlms_tests_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/tests/integration/MarkingWorkflowTest.cpp || cmake_object_order_depends_target_mlms_tests
+  CONFIG = Debug
+  DEFINES = -DMLMS_TEST_TMP_DIR="\"C:/Users/thape/LMS/Software/Phase 4/mlms/build/tests/tmp\""
+  DEP_FILE = tests\CMakeFiles\mlms_tests.dir\integration\MarkingWorkflowTest.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/tests" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest/include" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest"
+  OBJECT_DIR = tests\CMakeFiles\mlms_tests.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\mlms_tests.dir\integration
+  TARGET_SUPPORT_DIR = tests\CMakeFiles\mlms_tests.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target mlms_tests
+
+
+#############################################
+# Link the executable tests\mlms_tests.exe
+
+build tests/mlms_tests.exe tests/mlms_tests_4fba942f_tests.cmake | ${cmake_ninja_workdir}tests/mlms_tests_4fba942f_tests.cmake: CXX_EXECUTABLE_LINKER__mlms_tests_Debug tests/CMakeFiles/mlms_tests.dir/unit/DateTimeTest.cpp.obj tests/CMakeFiles/mlms_tests.dir/unit/DomainTest.cpp.obj tests/CMakeFiles/mlms_tests.dir/unit/PenaltyPolicyTest.cpp.obj tests/CMakeFiles/mlms_tests.dir/unit/SubmissionStateTest.cpp.obj tests/CMakeFiles/mlms_tests.dir/unit/InfrastructureTest.cpp.obj tests/CMakeFiles/mlms_tests.dir/integration/DatabaseTest.cpp.obj tests/CMakeFiles/mlms_tests.dir/integration/AuthServiceTest.cpp.obj tests/CMakeFiles/mlms_tests.dir/integration/AdminServiceTest.cpp.obj tests/CMakeFiles/mlms_tests.dir/integration/SubmissionServiceTest.cpp.obj tests/CMakeFiles/mlms_tests.dir/integration/MarkingWorkflowTest.cpp.obj | src/libmlms_core.a lib/libgtest_main.a C$:/msys64/mingw64/lib/libsqlite3.dll.a C$:/msys64/mingw64/lib/libargon2.dll.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a src/libmlms_core.a
+  CONFIG = Debug
+  FLAGS = -g
+  LINK_LIBRARIES = src/libmlms_core.a  lib/libgtest_main.a  C:/msys64/mingw64/lib/libsqlite3.dll.a  C:/msys64/mingw64/lib/libargon2.dll.a  lib/libgtest.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = tests\CMakeFiles\mlms_tests.dir
+  POST_BUILD = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\thape\LMS\Software\Phase 4\mlms\build\tests" && C:\msys64\mingw64\bin\cmake.exe -P "C:/Users/thape/LMS/Software/Phase 4/mlms/build/tests/mlms_tests_4fba942f_discovery.cmake" -- "
+  PRE_LINK = cd .
+  RESTAT = 1
+  TARGET_FILE = tests\mlms_tests.exe
+  TARGET_IMPLIB = tests\libmlms_tests.dll.a
+  TARGET_PDB = mlms_tests.exe.dbg
+  TARGET_SUPPORT_DIR = tests\CMakeFiles\mlms_tests.dir
+
+# =============================================================================
+# Object build statements for EXECUTABLE target mlms_gui_tests
+
+
+#############################################
+# Order-only phony target for mlms_gui_tests
+
+build cmake_object_order_depends_target_mlms_gui_tests: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_mlms_core cmake_object_order_depends_target_mlms_ui
+
+build tests/CMakeFiles/mlms_gui_tests.dir/gui/GuiSmokeTest.cpp.obj: CXX_COMPILER__mlms_gui_tests_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/tests/gui/GuiSmokeTest.cpp || cmake_object_order_depends_target_mlms_gui_tests
+  CONFIG = Debug
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DMLMS_TEST_TMP_DIR="\"C:/Users/thape/LMS/Software/Phase 4/mlms/build/tests/tmp\"" -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -DWINVER=0x0A00 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN32_WINNT=0x0A00 -D_WIN64
+  DEP_FILE = tests\CMakeFiles\mlms_gui_tests.dir\gui\GuiSmokeTest.cpp.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wno-sign-conversion -Werror
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/tests" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/src" -isystem C:/msys64/mingw64/include/qt6/QtWidgets -isystem C:/msys64/mingw64/include/qt6 -isystem C:/msys64/mingw64/include/qt6/QtCore -isystem C:/msys64/mingw64/share/qt6/mkspecs/win32-g++ -isystem C:/msys64/mingw64/include/qt6/QtGui -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest/include" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest"
+  OBJECT_DIR = tests\CMakeFiles\mlms_gui_tests.dir
+  OBJECT_FILE_DIR = tests\CMakeFiles\mlms_gui_tests.dir\gui
+  TARGET_SUPPORT_DIR = tests\CMakeFiles\mlms_gui_tests.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target mlms_gui_tests
+
+
+#############################################
+# Link the executable tests\mlms_gui_tests.exe
+
+build tests/mlms_gui_tests.exe: CXX_EXECUTABLE_LINKER__mlms_gui_tests_Debug tests/CMakeFiles/mlms_gui_tests.dir/gui/GuiSmokeTest.cpp.obj | src/libmlms_ui.a lib/libgtest.a src/libmlms_core.a C$:/msys64/mingw64/lib/libsqlite3.dll.a C$:/msys64/mingw64/lib/libargon2.dll.a C$:/msys64/mingw64/lib/libQt6Widgets.dll.a C$:/msys64/mingw64/lib/libQt6Gui.dll.a C$:/msys64/mingw64/lib/libQt6Core.dll.a || lib/libgtest.a src/libmlms_core.a src/libmlms_ui.a
+  CONFIG = Debug
+  FLAGS = -g
+  LINK_LIBRARIES = src/libmlms_ui.a  lib/libgtest.a  src/libmlms_core.a  C:/msys64/mingw64/lib/libsqlite3.dll.a  C:/msys64/mingw64/lib/libargon2.dll.a  C:/msys64/mingw64/lib/libQt6Widgets.dll.a  C:/msys64/mingw64/lib/libQt6Gui.dll.a  C:/msys64/mingw64/lib/libQt6Core.dll.a  -lmpr  -luserenv  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = tests\CMakeFiles\mlms_gui_tests.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = tests\mlms_gui_tests.exe
+  TARGET_IMPLIB = tests\libmlms_gui_tests.dll.a
+  TARGET_PDB = mlms_gui_tests.exe.dbg
+  TARGET_SUPPORT_DIR = tests\CMakeFiles\mlms_gui_tests.dir
+
+
+#############################################
+# Utility command for test
+
+build tests/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\thape\LMS\Software\Phase 4\mlms\build\tests" && C:\msys64\mingw64\bin\ctest.exe "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build tests/test: phony tests/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build tests/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\thape\LMS\Software\Phase 4\mlms\build\tests" && C:\msys64\mingw64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build tests/edit_cache: phony tests/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build tests/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\thape\LMS\Software\Phase 4\mlms\build\tests" && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -S"C:\Users\thape\LMS\Software\Phase 4\mlms" -B"C:\Users\thape\LMS\Software\Phase 4\mlms\build""
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build tests/rebuild_cache: phony tests/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/thape/LMS/Software/Phase 4/mlms/tests/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for test
+
+build _deps/googletest-build/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\thape\LMS\Software\Phase 4\mlms\build\_deps\googletest-build" && C:\msys64\mingw64\bin\ctest.exe "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build _deps/googletest-build/test: phony _deps/googletest-build/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/googletest-build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\thape\LMS\Software\Phase 4\mlms\build\_deps\googletest-build" && C:\msys64\mingw64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps/googletest-build/edit_cache: phony _deps/googletest-build/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/googletest-build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\thape\LMS\Software\Phase 4\mlms\build\_deps\googletest-build" && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -S"C:\Users\thape\LMS\Software\Phase 4\mlms" -B"C:\Users\thape\LMS\Software\Phase 4\mlms\build""
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/googletest-build/rebuild_cache: phony _deps/googletest-build/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target gmock
+
+
+#############################################
+# Order-only phony target for gmock
+
+build cmake_object_order_depends_target_gmock: phony || cmake_object_order_depends_target_gtest
+
+build _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj: CXX_COMPILER__gmock_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/build/_deps/googletest-src/googlemock/src/gmock-all.cc || cmake_object_order_depends_target_gmock
+  CONFIG = Debug
+  DEP_FILE = _deps\googletest-build\googlemock\CMakeFiles\gmock.dir\src\gmock-all.cc.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googlemock/include" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googlemock" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest/include" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest"
+  OBJECT_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock.dir
+  OBJECT_FILE_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock.dir\src
+  TARGET_SUPPORT_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target gmock
+
+
+#############################################
+# Link the static library lib\libgmock.a
+
+build lib/libgmock.a: CXX_STATIC_LIBRARY_LINKER__gmock_Debug _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj || lib/libgtest.a
+  CONFIG = Debug
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = lib\libgmock.a
+  TARGET_PDB = gmock.a.dbg
+  TARGET_SUPPORT_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock.dir
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target gmock_main
+
+
+#############################################
+# Order-only phony target for gmock_main
+
+build cmake_object_order_depends_target_gmock_main: phony || cmake_object_order_depends_target_gmock cmake_object_order_depends_target_gtest
+
+build _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj: CXX_COMPILER__gmock_main_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/build/_deps/googletest-src/googlemock/src/gmock_main.cc || cmake_object_order_depends_target_gmock_main
+  CONFIG = Debug
+  DEP_FILE = _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir\src\gmock_main.cc.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+  INCLUDES = -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googlemock/include" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googlemock" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest/include" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest"
+  OBJECT_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir
+  OBJECT_FILE_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir\src
+  TARGET_SUPPORT_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target gmock_main
+
+
+#############################################
+# Link the static library lib\libgmock_main.a
+
+build lib/libgmock_main.a: CXX_STATIC_LIBRARY_LINKER__gmock_main_Debug _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj || lib/libgmock.a lib/libgtest.a
+  CONFIG = Debug
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = lib\libgmock_main.a
+  TARGET_PDB = gmock_main.a.dbg
+  TARGET_SUPPORT_DIR = _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir
+
+
+#############################################
+# Utility command for test
+
+build _deps/googletest-build/googlemock/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\thape\LMS\Software\Phase 4\mlms\build\_deps\googletest-build\googlemock" && C:\msys64\mingw64\bin\ctest.exe "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build _deps/googletest-build/googlemock/test: phony _deps/googletest-build/googlemock/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/googletest-build/googlemock/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\thape\LMS\Software\Phase 4\mlms\build\_deps\googletest-build\googlemock" && C:\msys64\mingw64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps/googletest-build/googlemock/edit_cache: phony _deps/googletest-build/googlemock/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/googletest-build/googlemock/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\thape\LMS\Software\Phase 4\mlms\build\_deps\googletest-build\googlemock" && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -S"C:\Users\thape\LMS\Software\Phase 4\mlms" -B"C:\Users\thape\LMS\Software\Phase 4\mlms\build""
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/googletest-build/googlemock/rebuild_cache: phony _deps/googletest-build/googlemock/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googlemock/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target gtest
+
+
+#############################################
+# Order-only phony target for gtest
+
+build cmake_object_order_depends_target_gtest: phony || .
+
+build _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj: CXX_COMPILER__gtest_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/build/_deps/googletest-src/googletest/src/gtest-all.cc || cmake_object_order_depends_target_gtest
+  CONFIG = Debug
+  DEP_FILE = _deps\googletest-build\googletest\CMakeFiles\gtest.dir\src\gtest-all.cc.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+  INCLUDES = -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest/include" -I"C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest"
+  OBJECT_DIR = _deps\googletest-build\googletest\CMakeFiles\gtest.dir
+  OBJECT_FILE_DIR = _deps\googletest-build\googletest\CMakeFiles\gtest.dir\src
+  TARGET_SUPPORT_DIR = _deps\googletest-build\googletest\CMakeFiles\gtest.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target gtest
+
+
+#############################################
+# Link the static library lib\libgtest.a
+
+build lib/libgtest.a: CXX_STATIC_LIBRARY_LINKER__gtest_Debug _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj
+  CONFIG = Debug
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = _deps\googletest-build\googletest\CMakeFiles\gtest.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = lib\libgtest.a
+  TARGET_PDB = gtest.a.dbg
+  TARGET_SUPPORT_DIR = _deps\googletest-build\googletest\CMakeFiles\gtest.dir
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target gtest_main
+
+
+#############################################
+# Order-only phony target for gtest_main
+
+build cmake_object_order_depends_target_gtest_main: phony || cmake_object_order_depends_target_gtest
+
+build _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj: CXX_COMPILER__gtest_main_unscanned_Debug C$:/Users/thape/LMS/Software/Phase$ 4/mlms/build/_deps/googletest-src/googletest/src/gtest_main.cc || cmake_object_order_depends_target_gtest_main
+  CONFIG = Debug
+  DEP_FILE = _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir\src\gtest_main.cc.obj.d
+  FLAGS = -g -std=c++17 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+  INCLUDES = -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest/include" -isystem "C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest"
+  OBJECT_DIR = _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir
+  OBJECT_FILE_DIR = _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir\src
+  TARGET_SUPPORT_DIR = _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target gtest_main
+
+
+#############################################
+# Link the static library lib\libgtest_main.a
+
+build lib/libgtest_main.a: CXX_STATIC_LIBRARY_LINKER__gtest_main_Debug _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj || lib/libgtest.a
+  CONFIG = Debug
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = lib\libgtest_main.a
+  TARGET_PDB = gtest_main.a.dbg
+  TARGET_SUPPORT_DIR = _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir
+
+
+#############################################
+# Utility command for test
+
+build _deps/googletest-build/googletest/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\thape\LMS\Software\Phase 4\mlms\build\_deps\googletest-build\googletest" && C:\msys64\mingw64\bin\ctest.exe "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build _deps/googletest-build/googletest/test: phony _deps/googletest-build/googletest/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build _deps/googletest-build/googletest/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\thape\LMS\Software\Phase 4\mlms\build\_deps\googletest-build\googletest" && C:\msys64\mingw64\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build _deps/googletest-build/googletest/edit_cache: phony _deps/googletest-build/googletest/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build _deps/googletest-build/googletest/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D "C:\Users\thape\LMS\Software\Phase 4\mlms\build\_deps\googletest-build\googletest" && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -S"C:\Users\thape\LMS\Software\Phase 4\mlms" -B"C:\Users\thape\LMS\Software\Phase 4\mlms\build""
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build _deps/googletest-build/googletest/rebuild_cache: phony _deps/googletest-build/googletest/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
 # Target aliases.
+
+build gmock: phony lib/libgmock.a
+
+build gmock_main: phony lib/libgmock_main.a
+
+build gtest: phony lib/libgtest.a
+
+build gtest_main: phony lib/libgtest_main.a
+
+build libgmock.a: phony lib/libgmock.a
+
+build libgmock_main.a: phony lib/libgmock_main.a
+
+build libgtest.a: phony lib/libgtest.a
+
+build libgtest_main.a: phony lib/libgtest_main.a
+
+build libmlms_core.a: phony src/libmlms_core.a
+
+build libmlms_ui.a: phony src/libmlms_ui.a
 
 build mlms: phony src/mlms.exe
 
@@ -216,6 +1078,22 @@ build mlms_autogen: phony src/mlms_autogen
 
 build mlms_autogen_timestamp_deps: phony src/mlms_autogen_timestamp_deps
 
+build mlms_core: phony src/libmlms_core.a
+
+build mlms_gui_tests: phony tests/mlms_gui_tests.exe
+
+build mlms_gui_tests.exe: phony tests/mlms_gui_tests.exe
+
+build mlms_tests: phony tests/mlms_tests.exe
+
+build mlms_tests.exe: phony tests/mlms_tests.exe
+
+build mlms_ui: phony src/libmlms_ui.a
+
+build mlms_ui_autogen: phony src/mlms_ui_autogen
+
+build mlms_ui_autogen_timestamp_deps: phony src/mlms_ui_autogen_timestamp_deps
+
 # =============================================================================
 # Folder targets.
 
@@ -224,14 +1102,42 @@ build mlms_autogen_timestamp_deps: phony src/mlms_autogen_timestamp_deps
 #############################################
 # Folder: C:/Users/thape/LMS/Software/Phase 4/mlms/build
 
-build all: phony src/all
+build all: phony src/all tests/all
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-build
+
+build _deps/googletest-build/all: phony _deps/googletest-build/googlemock/all
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-build/googlemock
+
+build _deps/googletest-build/googlemock/all: phony lib/libgmock.a lib/libgmock_main.a _deps/googletest-build/googletest/all
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-build/googletest
+
+build _deps/googletest-build/googletest/all: phony lib/libgtest.a lib/libgtest_main.a
 
 # =============================================================================
 
 #############################################
 # Folder: C:/Users/thape/LMS/Software/Phase 4/mlms/build/src
 
-build src/all: phony src/mlms.exe
+build src/all: phony src/libmlms_core.a src/libmlms_ui.a src/mlms.exe
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/thape/LMS/Software/Phase 4/mlms/build/tests
+
+build tests/all: phony tests/mlms_tests.exe tests/mlms_gui_tests.exe _deps/googletest-build/all
 
 # =============================================================================
 # Built-in targets
@@ -240,20 +1146,21 @@ build src/all: phony src/mlms.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja C$:/Users/thape/LMS/Software/Phase$ 4/mlms/build/cmake_install.cmake C$:/Users/thape/LMS/Software/Phase$ 4/mlms/build/src/cmake_install.cmake: RERUN_CMAKE | C$:/Users/thape/LMS/Software/Phase$ 4/mlms/CMakeLists.txt C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/CMakeLists.txt C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreVersionlessAliasTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointMinGW32Target.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateMacros.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateVersionlessAliasTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsDependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiPlugins.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiVersionlessAliasTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QGifPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QGifPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QGifPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QGifPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QGifPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QICOPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QICOPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QICOPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QICOPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QICOPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QJpegPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QJpegPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QJpegPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6/FindWrapAtomic.cmake C$:/msys64/mingw64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6Config.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6ConfigExtras.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6ConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6Dependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6Targets.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6TargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6VersionlessAliasTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtFeature.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtFeatureCommon.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtInstallPaths.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicAndroidHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicAppleHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicCMakeEarlyPolicyHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicCMakeIncludeGuardHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicGitHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicJsonHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicPluginHelpers_v2.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomAttributionHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomBuildToolHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomCommonGenerationHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomCpeHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomCycloneDXHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomDepHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomDocumentNamespaceHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomExternalReferenceHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomFileHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomGenerationCycloneDXHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomLicenseHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomOpsHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomPurlHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomPythonHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomQtEntityHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomRelationshipHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomSystemDepHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicTargetHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicTestHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicToolHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicWindowsHelpers.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeFindDependencyMacro.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/mingw64/share/cmake/Modules/CheckCXXCompilerFlag.cmake C$:/msys64/mingw64/share/cmake/Modules/CheckCXXSourceCompiles.cmake C$:/msys64/mingw64/share/cmake/Modules/CheckIncludeFileCXX.cmake C$:/msys64/mingw64/share/cmake/Modules/CheckLibraryExists.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/FindPackageHandleStandardArgs.cmake C$:/msys64/mingw64/share/cmake/Modules/FindPackageMessage.cmake C$:/msys64/mingw64/share/cmake/Modules/FindPkgConfig.cmake C$:/msys64/mingw64/share/cmake/Modules/FindSQLite3.cmake C$:/msys64/mingw64/share/cmake/Modules/FindThreads.cmake C$:/msys64/mingw64/share/cmake/Modules/FindVulkan.cmake C$:/msys64/mingw64/share/cmake/Modules/GNUInstallDirs.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CheckCommon.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CheckCompilerFlag.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CheckSourceCompiles.cmake C$:/msys64/mingw64/share/cmake/Modules/Linker/GNU-CXX.cmake C$:/msys64/mingw64/share/cmake/Modules/Linker/GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Linker/GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Linker/Windows-GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.4.4/CMakeCXXCompiler.cmake CMakeFiles/4.4.4/CMakeRCCompiler.cmake CMakeFiles/4.4.4/CMakeSystem.cmake
+build build.ninja C$:/Users/thape/LMS/Software/Phase$ 4/mlms/build/cmake_install.cmake C$:/Users/thape/LMS/Software/Phase$ 4/mlms/build/src/cmake_install.cmake C$:/Users/thape/LMS/Software/Phase$ 4/mlms/build/tests/cmake_install.cmake C$:/Users/thape/LMS/Software/Phase$ 4/mlms/build/_deps/googletest-build/cmake_install.cmake C$:/Users/thape/LMS/Software/Phase$ 4/mlms/build/_deps/googletest-build/googlemock/cmake_install.cmake C$:/Users/thape/LMS/Software/Phase$ 4/mlms/build/_deps/googletest-build/googletest/cmake_install.cmake C$:/Users/thape/LMS/Software/Phase$ 4/mlms/build/CTestTestfile.cmake C$:/Users/thape/LMS/Software/Phase$ 4/mlms/build/tests/CTestTestfile.cmake C$:/Users/thape/LMS/Software/Phase$ 4/mlms/build/_deps/googletest-build/CTestTestfile.cmake C$:/Users/thape/LMS/Software/Phase$ 4/mlms/build/_deps/googletest-build/googlemock/CTestTestfile.cmake C$:/Users/thape/LMS/Software/Phase$ 4/mlms/build/_deps/googletest-build/googletest/CTestTestfile.cmake: RERUN_CMAKE | C$:/Users/thape/LMS/Software/Phase$ 4/mlms/CMakeLists.txt C$:/Users/thape/LMS/Software/Phase$ 4/mlms/sql/schema.sql C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/CMakeLists.txt C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/data/SchemaSql.hpp.in C$:/Users/thape/LMS/Software/Phase$ 4/mlms/tests/CMakeLists.txt C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreVersionlessAliasTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointMinGW32Target.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateMacros.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateVersionlessAliasTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsDependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiPlugins.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiVersionlessAliasTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QGifPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QGifPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QGifPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QGifPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QGifPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QICOPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QICOPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QICOPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QICOPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QICOPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QJpegPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QJpegPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QJpegPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6/FindWrapAtomic.cmake C$:/msys64/mingw64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6Config.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6ConfigExtras.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6ConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6Dependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6Targets.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6TargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6VersionlessAliasTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtFeature.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtFeatureCommon.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtInstallPaths.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicAndroidHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicAppleHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicCMakeEarlyPolicyHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicCMakeIncludeGuardHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicGitHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicJsonHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicPluginHelpers_v2.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomAttributionHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomBuildToolHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomCommonGenerationHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomCpeHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomCycloneDXHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomDepHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomDocumentNamespaceHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomExternalReferenceHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomFileHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomGenerationCycloneDXHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomLicenseHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomOpsHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomPurlHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomPythonHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomQtEntityHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomRelationshipHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomSystemDepHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicTargetHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicTestHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicToolHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicWindowsHelpers.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeCInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeDependentOption.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeFindDependencyMacro.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/mingw64/share/cmake/Modules/CheckCXXCompilerFlag.cmake C$:/msys64/mingw64/share/cmake/Modules/CheckCXXSourceCompiles.cmake C$:/msys64/mingw64/share/cmake/Modules/CheckIncludeFileCXX.cmake C$:/msys64/mingw64/share/cmake/Modules/CheckLibraryExists.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/ExternalProject/shared_internal_commands.cmake C$:/msys64/mingw64/share/cmake/Modules/FetchContent.cmake C$:/msys64/mingw64/share/cmake/Modules/FetchContent/CMakeLists.cmake.in C$:/msys64/mingw64/share/cmake/Modules/FindPackageHandleStandardArgs.cmake C$:/msys64/mingw64/share/cmake/Modules/FindPackageMessage.cmake C$:/msys64/mingw64/share/cmake/Modules/FindPkgConfig.cmake C$:/msys64/mingw64/share/cmake/Modules/FindSQLite3.cmake C$:/msys64/mingw64/share/cmake/Modules/FindThreads.cmake C$:/msys64/mingw64/share/cmake/Modules/FindVulkan.cmake C$:/msys64/mingw64/share/cmake/Modules/GNUInstallDirs.cmake C$:/msys64/mingw64/share/cmake/Modules/GoogleTest.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CheckCommon.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CheckCompilerFlag.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CheckSourceCompiles.cmake C$:/msys64/mingw64/share/cmake/Modules/Linker/GNU-C.cmake C$:/msys64/mingw64/share/cmake/Modules/Linker/GNU-CXX.cmake C$:/msys64/mingw64/share/cmake/Modules/Linker/GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Linker/GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Linker/Windows-GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.4.4/CMakeCCompiler.cmake CMakeFiles/4.4.4/CMakeCXXCompiler.cmake CMakeFiles/4.4.4/CMakeRCCompiler.cmake CMakeFiles/4.4.4/CMakeSystem.cmake _deps/googletest-src/CMakeLists.txt _deps/googletest-src/googlemock/CMakeLists.txt _deps/googletest-src/googletest/CMakeLists.txt _deps/googletest-src/googletest/cmake/internal_utils.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Users/thape/LMS/Software/Phase$ 4/mlms/CMakeLists.txt C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/CMakeLists.txt C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreVersionlessAliasTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointMinGW32Target.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateMacros.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateVersionlessAliasTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsDependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiPlugins.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiVersionlessAliasTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QGifPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QGifPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QGifPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QGifPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QGifPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QICOPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QICOPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QICOPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QICOPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QICOPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QJpegPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QJpegPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QJpegPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6/FindWrapAtomic.cmake C$:/msys64/mingw64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6Config.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6ConfigExtras.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6ConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6Dependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6Targets.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6TargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6VersionlessAliasTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtFeature.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtFeatureCommon.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtInstallPaths.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicAndroidHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicAppleHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicCMakeEarlyPolicyHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicCMakeIncludeGuardHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicGitHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicJsonHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicPluginHelpers_v2.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomAttributionHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomBuildToolHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomCommonGenerationHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomCpeHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomCycloneDXHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomDepHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomDocumentNamespaceHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomExternalReferenceHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomFileHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomGenerationCycloneDXHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomLicenseHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomOpsHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomPurlHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomPythonHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomQtEntityHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomRelationshipHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomSystemDepHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicTargetHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicTestHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicToolHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicWindowsHelpers.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeFindDependencyMacro.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/mingw64/share/cmake/Modules/CheckCXXCompilerFlag.cmake C$:/msys64/mingw64/share/cmake/Modules/CheckCXXSourceCompiles.cmake C$:/msys64/mingw64/share/cmake/Modules/CheckIncludeFileCXX.cmake C$:/msys64/mingw64/share/cmake/Modules/CheckLibraryExists.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/FindPackageHandleStandardArgs.cmake C$:/msys64/mingw64/share/cmake/Modules/FindPackageMessage.cmake C$:/msys64/mingw64/share/cmake/Modules/FindPkgConfig.cmake C$:/msys64/mingw64/share/cmake/Modules/FindSQLite3.cmake C$:/msys64/mingw64/share/cmake/Modules/FindThreads.cmake C$:/msys64/mingw64/share/cmake/Modules/FindVulkan.cmake C$:/msys64/mingw64/share/cmake/Modules/GNUInstallDirs.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CheckCommon.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CheckCompilerFlag.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CheckSourceCompiles.cmake C$:/msys64/mingw64/share/cmake/Modules/Linker/GNU-CXX.cmake C$:/msys64/mingw64/share/cmake/Modules/Linker/GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Linker/GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Linker/Windows-GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.4.4/CMakeCXXCompiler.cmake CMakeFiles/4.4.4/CMakeRCCompiler.cmake CMakeFiles/4.4.4/CMakeSystem.cmake: phony
+build C$:/Users/thape/LMS/Software/Phase$ 4/mlms/CMakeLists.txt C$:/Users/thape/LMS/Software/Phase$ 4/mlms/sql/schema.sql C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/CMakeLists.txt C$:/Users/thape/LMS/Software/Phase$ 4/mlms/src/data/SchemaSql.hpp.in C$:/Users/thape/LMS/Software/Phase$ 4/mlms/tests/CMakeLists.txt C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreMacros.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Core/Qt6CoreVersionlessAliasTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointMinGW32Target.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateMacros.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6EntryPointPrivate/Qt6EntryPointPrivateVersionlessAliasTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsDependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiPlugins.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6GuiVersionlessAliasTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QGifPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QGifPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QGifPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QGifPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QGifPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QICOPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QICOPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QICOPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QICOPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QICOPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QJpegPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QJpegPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QJpegPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QMinimalIntegrationPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QOffscreenIntegrationPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QTuioTouchPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsDirect2DIntegrationPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Gui/Qt6QWindowsIntegrationPluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsDependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets-relwithdebinfo.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsTargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6/FindWrapAtomic.cmake C$:/msys64/mingw64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6Config.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6ConfigExtras.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6ConfigVersion.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6Dependencies.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6Targets.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6TargetsPrecheck.cmake C$:/msys64/mingw64/lib/cmake/Qt6/Qt6VersionlessAliasTargets.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtFeature.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtFeatureCommon.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtInstallPaths.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicAndroidHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicAppleHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicCMakeEarlyPolicyHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicCMakeIncludeGuardHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicGitHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicJsonHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicPluginHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicPluginHelpers_v2.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomAttributionHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomBuildToolHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomCommonGenerationHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomCpeHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomCycloneDXHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomDepHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomDocumentNamespaceHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomExternalReferenceHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomFileHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomGenerationCycloneDXHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomLicenseHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomOpsHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomPurlHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomPythonHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomQtEntityHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomRelationshipHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicSbomSystemDepHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicTargetHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicTestHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicToolHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake C$:/msys64/mingw64/lib/cmake/Qt6/QtPublicWindowsHelpers.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeCInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeDependentOption.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeFindDependencyMacro.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/mingw64/share/cmake/Modules/CheckCXXCompilerFlag.cmake C$:/msys64/mingw64/share/cmake/Modules/CheckCXXSourceCompiles.cmake C$:/msys64/mingw64/share/cmake/Modules/CheckIncludeFileCXX.cmake C$:/msys64/mingw64/share/cmake/Modules/CheckLibraryExists.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/GNU-C.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/ExternalProject/shared_internal_commands.cmake C$:/msys64/mingw64/share/cmake/Modules/FetchContent.cmake C$:/msys64/mingw64/share/cmake/Modules/FetchContent/CMakeLists.cmake.in C$:/msys64/mingw64/share/cmake/Modules/FindPackageHandleStandardArgs.cmake C$:/msys64/mingw64/share/cmake/Modules/FindPackageMessage.cmake C$:/msys64/mingw64/share/cmake/Modules/FindPkgConfig.cmake C$:/msys64/mingw64/share/cmake/Modules/FindSQLite3.cmake C$:/msys64/mingw64/share/cmake/Modules/FindThreads.cmake C$:/msys64/mingw64/share/cmake/Modules/FindVulkan.cmake C$:/msys64/mingw64/share/cmake/Modules/GNUInstallDirs.cmake C$:/msys64/mingw64/share/cmake/Modules/GoogleTest.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CheckCommon.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CheckCompilerFlag.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CheckFlagCommonConfig.cmake C$:/msys64/mingw64/share/cmake/Modules/Internal/CheckSourceCompiles.cmake C$:/msys64/mingw64/share/cmake/Modules/Linker/GNU-C.cmake C$:/msys64/mingw64/share/cmake/Modules/Linker/GNU-CXX.cmake C$:/msys64/mingw64/share/cmake/Modules/Linker/GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Linker/GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Linker/Windows-GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU-C.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-Initialize.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/4.4.4/CMakeCCompiler.cmake CMakeFiles/4.4.4/CMakeCXXCompiler.cmake CMakeFiles/4.4.4/CMakeRCCompiler.cmake CMakeFiles/4.4.4/CMakeSystem.cmake _deps/googletest-src/CMakeLists.txt _deps/googletest-src/googlemock/CMakeLists.txt _deps/googletest-src/googletest/CMakeLists.txt _deps/googletest-src/googletest/cmake/internal_utils.cmake: phony
 
 
 #############################################
 # Clean additional files.
 
 build CMakeFiles/clean.additional: CLEAN_ADDITIONAL
+  CONFIG = Debug
 
 
 #############################################

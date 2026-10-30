@@ -1,92 +1,120 @@
-#include <QApplication>
-#include <sqlite3.h>
-#include <argon2.h>
-#include <QDebug>
-#include "data/UserRepository.hpp"
-#include "data/AssignmentRepository.hpp"
-#include "services/AuthService.hpp"
-#include "ui/LoginWindow.hpp"
+// MLMS entry point and composition root: chooses the data folder, opens the
+// database, creates the concrete classes and wires the sign-in flow.
+//
+// Usage: mlms [--data <folder>] [--demo]
+//   --data  folder for mlms.db and submitted files (default: MLMS_DATA_DIR, else <exe folder>/data)
+//   --demo  fill an empty database with demo accounts (password "Password1")
 
-std::string hashPassword(const std::string& password) {
-    char encoded[256];
-    uint8_t salt[16] = {0}; 
-    argon2id_hash_encoded(1, 65536, 1, password.c_str(), password.length(), 
-                          salt, 16, 32, encoded, sizeof(encoded));
-    return std::string(encoded);
+#include "domain/Errors.hpp"
+#include "services/AppContext.hpp"
+#include "services/Bootstrap.hpp"
+#include "ui/Dialogs.hpp"
+#include "ui/LoginWindow.hpp"
+#include "ui/MainWindow.hpp"
+#include "ui/UiHelpers.hpp"
+
+#include <QApplication>
+#include <QCommandLineParser>
+#include <QDir>
+#include <QFile>
+#include <QFileInfo>
+#include <QMessageBox>
+#include <QStandardPaths>
+
+#include <memory>
+
+namespace {
+
+QString chooseDataDir(const QCommandLineParser& args) {
+    if (args.isSet("data")) return args.value("data");
+    const QString env = qEnvironmentVariable("MLMS_DATA_DIR");
+    if (!env.isEmpty()) return env;
+    const QString besideExe = QCoreApplication::applicationDirPath() + "/data";
+    if (QDir().mkpath(besideExe) && QFileInfo(besideExe).isWritable()) return besideExe;
+    // e.g. installed under Program Files, which ordinary users cannot write to
+    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
 }
+
+std::unique_ptr<AppContext> openContext(const QString& dataDir) {
+    const QString dbPath = dataDir + "/mlms.db";
+    auto make = [&] {
+        return std::make_unique<AppContext>(ui::s(dbPath), ui::toPath(dataDir + "/submissions"),
+                                            std::make_unique<SystemClock>(), std::make_unique<Argon2Hasher>());
+    };
+    try {
+        return make();
+    } catch (const DatabaseError& e) {
+        if (QString(e.what()).contains("unknown schema")) {
+            const QString backup = dbPath + ".old";
+            const auto answer = QMessageBox::question(
+                nullptr, "Old database found",
+                QString("The file %1 was created by an older version of the program and cannot be used.\n\n"
+                        "Rename it to %2 and start with a new, empty database?")
+                    .arg(QDir::toNativeSeparators(dbPath), QFileInfo(backup).fileName()));
+            if (answer == QMessageBox::Yes) {
+                QFile::remove(backup);
+                if (QFile::rename(dbPath, backup)) return make();
+            }
+        }
+        throw;
+    }
+}
+
+} // namespace
 
 int main(int argc, char* argv[]) {
     QApplication app(argc, argv);
+    QApplication::setApplicationName("MLMS");
+    QApplication::setOrganizationName("School");
+    QApplication::setApplicationVersion(PROJECT_VERSION);
+    QFont font = QApplication::font();
+    font.setPointSize(std::max(font.pointSize(), 10));
+    QApplication::setFont(font);
 
-    sqlite3* db = nullptr;
-    if (sqlite3_open("mlms.db", &db) != SQLITE_OK) {
+    QCommandLineParser args;
+    args.addHelpOption();
+    args.addVersionOption();
+    args.addOption({"data", "Folder for the database and submitted files.", "folder"});
+    args.addOption({"demo", "Fill an empty database with demo accounts and courses."});
+    args.process(app);
+
+    std::unique_ptr<AppContext> ctx;
+    try {
+        const QString dataDir = chooseDataDir(args);
+        if (!QDir().mkpath(dataDir)) throw MlmsError("Cannot create the data folder " + ui::s(dataDir));
+        ctx = openContext(dataDir);
+        if (args.isSet("demo")) seedDemoData(*ctx);
+        if (auto password = ensureAdministrator(*ctx)) {
+            QMessageBox::information(nullptr, "First start",
+                                     QString("An administrator account has been created.\n\nUsername: admin\n"
+                                             "Temporary password: %1\n\nWrite it down now. You will be asked to "
+                                             "choose a new password when you sign in.")
+                                         .arg(ui::q(*password)));
+        }
+    } catch (const std::exception& e) {
+        QMessageBox::critical(nullptr, "MLMS cannot start", e.what());
         return 1;
     }
 
-    const char* schema = 
-        "CREATE TABLE app_user ("
-        "  user_id INTEGER PRIMARY KEY,"
-        "  username TEXT NOT NULL UNIQUE,"
-        "  full_name TEXT NOT NULL,"
-        "  role TEXT NOT NULL,"
-        "  password_hash TEXT NOT NULL,"
-        "  is_active INTEGER NOT NULL DEFAULT 1"
-        ");"
-        "CREATE TABLE department ("
-        "  department_id INTEGER PRIMARY KEY,"
-        "  name TEXT NOT NULL,"
-        "  hod_id INTEGER REFERENCES app_user(user_id)"
-        ");"
-        "CREATE TABLE assignment ("
-        "  assignment_id INTEGER PRIMARY KEY,"
-        "  course_id INTEGER NOT NULL,"
-        "  title TEXT NOT NULL,"
-        "  description TEXT,"
-        "  deadline TEXT NOT NULL,"
-        "  max_mark INTEGER NOT NULL,"
-        "  is_published INTEGER NOT NULL,"
-        "  created_by INTEGER REFERENCES app_user(user_id)"
-        ");"
-        "CREATE TABLE IF NOT EXISTS submission ("
-        "  submission_id INTEGER PRIMARY KEY,"
-        "  assignment_id INTEGER NOT NULL REFERENCES assignment(assignment_id),"
-        "  student_id INTEGER NOT NULL REFERENCES app_user(user_id),"
-        "  version INTEGER NOT NULL CHECK (version >= 1),"
-        "  file_path TEXT NOT NULL,"
-        "  checksum TEXT NOT NULL CHECK (length(checksum) = 64),"
-        "  submitted_at TEXT NOT NULL,"
-        "  state TEXT NOT NULL CHECK (state IN ('SUBMITTED','LATE','MARKED','RETURNED','MODERATED','RELEASED')),"
-        "  UNIQUE (assignment_id, student_id, version)"
-        ");";
-
-    sqlite3_exec(db, schema, nullptr, nullptr, nullptr);
-
-    // Insert a test user
-    std::string hash = hashPassword("password123");
-    std::string insertUser = "INSERT INTO app_user(user_id, username, full_name, role, password_hash, is_active) "
-                             "VALUES (1, 'student1', 'Jane Doe', 'STUDENT', '" + hash + "', 1);";
-    sqlite3_exec(db, insertUser.c_str(), nullptr, nullptr, nullptr);
-
-    // Insert a test lecturer user ("lecturer1" / "password123")
-    std::string lecturerHash = hashPassword("password123");
-    std::string insertLecturer = "INSERT INTO app_user(user_id, username, full_name, role, password_hash, is_active) "
-                                 "VALUES (2, 'lecturer1', 'Dr. Smith', 'LECTURER', '" + lecturerHash + "', 1);";
-    sqlite3_exec(db, insertLecturer.c_str(), nullptr, nullptr, nullptr);
-
-    // Initialize repositories and test assignment insertion
-    UserRepository userRepo(db);
-    AssignmentRepository assignmentRepo(db);
-
-    Assignment testAssignment(1, 101, "C++ Basics", "Introduction to C++17", "2026-06-01", 100, true, 1);
-    assignmentRepo.save(testAssignment);
-
-    AuthService authService(userRepo);
-
-    LoginWindow loginWindow(authService, db);
-    loginWindow.show();
-
-    int result = app.exec();
-
-    sqlite3_close(db);
-    return result;
+    // Sign-in loop: signing out returns to a fresh login window.
+    std::function<void()> showLogin;
+    showLogin = [&] {
+        auto* login = new LoginWindow(ctx->auth);
+        login->setAttribute(Qt::WA_DeleteOnClose);
+        QObject::connect(login, &LoginWindow::loggedIn, login, [&, login](User* raw, bool mustChange) {
+            std::unique_ptr<User> user(raw);
+            if (mustChange) {
+                ChangePasswordDialog dlg(ctx->auth, *user, true, login);
+                if (dlg.exec() != QDialog::Accepted) return; // stay on the sign-in screen
+            }
+            auto* main = new MainWindow(*ctx, std::move(user));
+            main->setAttribute(Qt::WA_DeleteOnClose);
+            QObject::connect(main, &MainWindow::signedOut, [&] { showLogin(); });
+            main->show();
+            login->close();
+        });
+        login->show();
+    };
+    showLogin();
+    return QApplication::exec();
 }

@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: "Software/Phase 4/mlms"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake ninja-build pkg-config libsqlite3-dev libargon2-dev \
+            qt6-base-dev libgl1-mesa-dev libgtest-dev cppcheck
+
+      - name: Configure
+        run: cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug
+
+      - name: Build
+        run: cmake --build build
+
+      - name: Unit, integration and GUI smoke tests
+        run: ctest --test-dir build --output-on-failure
+
+      - name: Static analysis (cppcheck, report only)
+        run: |
+          cppcheck --enable=warning,style,performance,portability --std=c++17 --inline-suppr \
+            --suppress=missingIncludeSystem -I src src 2> cppcheck-report.txt
+          cat cppcheck-report.txt
+
+      - name: Line coverage of the business logic
+        run: bash scripts/coverage.sh build-cov
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: reports
+          path: |
+            Software/Phase 4/mlms/build-cov/coverage.txt
+            Software/Phase 4/mlms/cppcheck-report.txt

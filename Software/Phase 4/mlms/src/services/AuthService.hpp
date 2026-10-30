@@ -1,26 +1,32 @@
 #pragma once
 
-#include "../data/UserRepository.hpp"
-#include <argon2.h>
-#include <string>
+#include "../data/Repositories.hpp"
+#include "../infrastructure/Infrastructure.hpp"
+
 #include <memory>
+#include <string>
+
+struct LoginResult {
+    std::unique_ptr<User> user;
+    bool mustChangePassword = false;
+};
 
 class AuthService {
-    UserRepository& userRepo_;
+    IUserRepository& users_;
+    IPasswordHasher& hasher_;
+    IClock& clock_;
+    std::string dummyHash_;
 
 public:
-    explicit AuthService(UserRepository& userRepo) : userRepo_(userRepo) {}
+    static constexpr int kMaxFailedAttempts = 5;
+    static constexpr int kLockoutMinutes = 15;
 
-    std::unique_ptr<User> authenticate(const std::string& username, const std::string& password) {
-        auto user = userRepo_.findByUsername(username);
-        if (!user || !user->isActive()) {
-            return nullptr;
-        }
+    AuthService(IUserRepository& users, IPasswordHasher& hasher, IClock& clock);
 
-        int result = argon2id_verify(user->passwordHash().c_str(), password.c_str(), password.length());
-        if (result == ARGON2_OK) {
-            return user;
-        }
-        return nullptr;
-    }
+    // Throws AuthenticationError with a message safe to show the user.
+    // Five wrong passwords lock the account for 15 minutes (FR-03).
+    LoginResult login(const std::string& username, const std::string& password);
+
+    // FR-04: required after an administrator reset before anything else.
+    void changePassword(const User& user, const std::string& currentPassword, const std::string& newPassword);
 };

@@ -1,47 +1,65 @@
 #include "LoginWindow.hpp"
-#include "DashboardWindow.hpp"
-#include <QVBoxLayout>
-#include <QHBoxLayout>
+#include "UiHelpers.hpp"
+#include "domain/Errors.hpp"
+
+#include <QFormLayout>
+#include <QGuiApplication>
 #include <QLabel>
 #include <QLineEdit>
 #include <QPushButton>
-#include <QMessageBox>
+#include <QVBoxLayout>
 
-LoginWindow::LoginWindow(AuthService& authService, sqlite3* db, QWidget* parent)
-    : QWidget(parent), authService_(authService), db_(db) {
-    
-    setWindowTitle("MLMS - Login");
-    resize(350, 200);
+LoginWindow::LoginWindow(AuthService& auth, QWidget* parent) : QWidget(parent), auth_(auth) {
+    setWindowTitle("MLMS - Sign in");
+    setMinimumWidth(380);
 
     auto* layout = new QVBoxLayout(this);
+    auto* title = new QLabel("<h2>Moderated Learning Management System</h2>");
+    title->setWordWrap(true);
+    layout->addWidget(title);
+    layout->addWidget(new QLabel("Sign in with the username and password given by the administrator."));
 
-    usernameEdit_ = new QLineEdit(this);
-    usernameEdit_->setPlaceholderText("Username");
-    passwordEdit_ = new QLineEdit(this);
-    passwordEdit_->setPlaceholderText("Password");
+    auto* form = new QFormLayout;
+    usernameEdit_ = new QLineEdit;
+    usernameEdit_->setAccessibleName("Username");
+    passwordEdit_ = new QLineEdit;
     passwordEdit_->setEchoMode(QLineEdit::Password);
+    passwordEdit_->setAccessibleName("Password");
+    form->addRow("&Username:", usernameEdit_);
+    form->addRow("&Password:", passwordEdit_);
+    layout->addLayout(form);
 
-    auto* loginButton = new QPushButton("Login", this);
+    errorLabel_ = new QLabel;
+    errorLabel_->setStyleSheet("color: #b00020;");
+    errorLabel_->setWordWrap(true);
+    errorLabel_->setAccessibleName("Sign-in error");
+    layout->addWidget(errorLabel_);
 
-    layout->addWidget(new QLabel("<b>System Login</b>", this));
-    layout->addWidget(usernameEdit_);
-    layout->addWidget(passwordEdit_);
+    auto* loginButton = new QPushButton("&Sign in");
+    loginButton->setDefault(true);
     layout->addWidget(loginButton);
 
     connect(loginButton, &QPushButton::clicked, this, &LoginWindow::handleLogin);
+    connect(passwordEdit_, &QLineEdit::returnPressed, this, &LoginWindow::handleLogin);
+    connect(usernameEdit_, &QLineEdit::returnPressed, passwordEdit_, qOverload<>(&QWidget::setFocus));
+    usernameEdit_->setFocus();
 }
 
 void LoginWindow::handleLogin() {
-    std::string username = usernameEdit_->text().toStdString();
-    std::string password = passwordEdit_->text().toStdString();
-
-    auto user = authService_.authenticate(username, password);
-    if (user) {
-        auto* dashboard = new DashboardWindow(std::move(user), db_);
-        dashboard->setAttribute(Qt::WA_DeleteOnClose);
-        dashboard->show();
-        this->close();
-    } else {
-        QMessageBox::warning(this, "Failure", "Invalid username or password, or account inactive.");
+    errorLabel_->clear();
+    QGuiApplication::setOverrideCursor(Qt::WaitCursor);
+    try {
+        auto result = auth_.login(ui::s(usernameEdit_->text()), ui::s(passwordEdit_->text()));
+        QGuiApplication::restoreOverrideCursor();
+        passwordEdit_->clear();
+        emit loggedIn(result.user.release(), result.mustChangePassword);
+    } catch (const AuthenticationError& e) {
+        QGuiApplication::restoreOverrideCursor();
+        errorLabel_->setText(e.what());
+        passwordEdit_->clear();
+        passwordEdit_->setFocus();
+    } catch (const std::exception& e) {
+        QGuiApplication::restoreOverrideCursor();
+        errorLabel_->setText(QString("Sign-in failed: %1").arg(e.what()));
     }
 }

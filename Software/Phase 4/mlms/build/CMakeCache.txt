@@ -14,6 +14,9 @@
 # EXTERNAL cache entries
 ########################
 
+//Builds the googlemock subproject
+BUILD_GMOCK:BOOL=ON
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=C:/msys64/mingw64/bin/addr2line.exe
 
@@ -22,7 +25,7 @@ CMAKE_AR:FILEPATH=C:/msys64/mingw64/bin/ar.exe
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=
+CMAKE_BUILD_TYPE:STRING=Debug
 
 //CXX compiler
 CMAKE_CXX_COMPILER:FILEPATH=C:/msys64/mingw64/bin/c++.exe
@@ -52,6 +55,35 @@ CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //Libraries linked by default with all C++ applications.
 CMAKE_CXX_STANDARD_LIBRARIES:STRING=-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+
+//C compiler
+CMAKE_C_COMPILER:FILEPATH=C:/msys64/mingw64/bin/cc.exe
+
+//A wrapper around 'ar' adding the appropriate '--plugin' option
+// for the GCC compiler
+CMAKE_C_COMPILER_AR:FILEPATH=C:/msys64/mingw64/bin/gcc-ar.exe
+
+//A wrapper around 'ranlib' adding the appropriate '--plugin' option
+// for the GCC compiler
+CMAKE_C_COMPILER_RANLIB:FILEPATH=C:/msys64/mingw64/bin/gcc-ranlib.exe
+
+//Flags used by the C compiler during all build types.
+CMAKE_C_FLAGS:STRING=
+
+//Flags used by the C compiler during DEBUG builds.
+CMAKE_C_FLAGS_DEBUG:STRING=-g
+
+//Flags used by the C compiler during MINSIZEREL builds.
+CMAKE_C_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG
+
+//Flags used by the C compiler during RELEASE builds.
+CMAKE_C_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
+
+//Flags used by the C compiler during RELWITHDEBINFO builds.
+CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
+
+//Libraries linked by default with all C applications.
+CMAKE_C_STANDARD_LIBRARIES:STRING=-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
 
 //Path to a program.
 CMAKE_DLLTOOL:FILEPATH=C:/msys64/mingw64/bin/dlltool.exe
@@ -185,7 +217,7 @@ CMAKE_PROJECT_NAME:STATIC=mlms
 CMAKE_PROJECT_SPDX_LICENSE:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_VERSION:STATIC=1.0
+CMAKE_PROJECT_VERSION:STATIC=1.0.0
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION_MAJOR:STATIC=1
@@ -194,7 +226,7 @@ CMAKE_PROJECT_VERSION_MAJOR:STATIC=1
 CMAKE_PROJECT_VERSION_MINOR:STATIC=0
 
 //Value Computed by CMake
-CMAKE_PROJECT_VERSION_PATCH:STATIC=
+CMAKE_PROJECT_VERSION_PATCH:STATIC=0
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION_TWEAK:STATIC=
@@ -282,8 +314,45 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//Build Qt GUI
+//Directory under which to collect all populated content
+FETCHCONTENT_BASE_DIR:PATH=C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps
+
+//Disables all attempts to download or update content and assumes
+// source dirs already exist
+FETCHCONTENT_FULLY_DISCONNECTED:BOOL=OFF
+
+//Enables QUIET option for all content population
+FETCHCONTENT_QUIET:BOOL=ON
+
+//When not empty, overrides where to find pre-populated content
+// for googletest
+FETCHCONTENT_SOURCE_DIR_GOOGLETEST:PATH=
+
+//Enables UPDATE_DISCONNECTED behavior for all content population
+FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of googletest
+FETCHCONTENT_UPDATES_DISCONNECTED_GOOGLETEST:BOOL=OFF
+
+//Use Abseil and RE2. Requires Abseil and RE2 to be separately
+// added to the build.
+GTEST_HAS_ABSL:BOOL=OFF
+
+//The directory containing a CMake configuration file for GTest.
+GTest_DIR:PATH=GTest_DIR-NOTFOUND
+
+//Enable installation of googletest. (Projects embedding googletest
+// may want to turn this OFF.)
+INSTALL_GTEST:BOOL=OFF
+
+//Build the Qt desktop application
 MLMS_BUILD_GUI:BOOL=ON
+
+//Build the GoogleTest suite
+MLMS_BUILD_TESTS:BOOL=ON
+
+//Instrument mlms_core and tests for gcov line coverage
+MLMS_COVERAGE:BOOL=OFF
 
 //Treat compiler warnings as errors
 MLMS_WARNINGS_AS_ERRORS:BOOL=ON
@@ -344,7 +413,56 @@ Vulkan_INCLUDE_DIR:PATH=C:/msys64/mingw64/include
 Vulkan_LIBRARY:FILEPATH=C:/msys64/mingw64/lib/libvulkan-1.dll.a
 
 //Path to a program.
+WINDEPLOYQT:FILEPATH=C:/msys64/mingw64/bin/windeployqt6.exe
+
+//Path to a program.
 WINDEPLOYQT_EXECUTABLE:FILEPATH=C:/msys64/mingw64/bin/windeployqt.exe
+
+//Value Computed by CMake
+gmock_BINARY_DIR:STATIC=C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-build/googlemock
+
+//Value Computed by CMake
+gmock_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+gmock_SOURCE_DIR:STATIC=C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googlemock
+
+//Build all of Google Mock's own tests.
+gmock_build_tests:BOOL=OFF
+
+//Value Computed by CMake
+googletest-distribution_BINARY_DIR:STATIC=C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-build
+
+//Value Computed by CMake
+googletest-distribution_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+googletest-distribution_SOURCE_DIR:STATIC=C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src
+
+//Value Computed by CMake
+gtest_BINARY_DIR:STATIC=C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-build/googletest
+
+//Value Computed by CMake
+gtest_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+gtest_SOURCE_DIR:STATIC=C:/Users/thape/LMS/Software/Phase 4/mlms/build/_deps/googletest-src/googletest
+
+//Build gtest's sample programs.
+gtest_build_samples:BOOL=OFF
+
+//Build all of gtest's own tests.
+gtest_build_tests:BOOL=OFF
+
+//Disable uses of pthreads in gtest.
+gtest_disable_pthreads:BOOL=OFF
+
+//Use shared (DLL) run-time lib even when Google Test is built
+// as static lib.
+gtest_force_shared_crt:BOOL=ON
+
+//Build gtest with internal symbols hidden in shared libraries.
+gtest_hide_internal_symbols:BOOL=OFF
 
 //Value Computed by CMake
 mlms_BINARY_DIR:STATIC=C:/Users/thape/LMS/Software/Phase 4/mlms/build
@@ -366,32 +484,32 @@ pkgcfg_lib_PC_SQLite3_sqlite3:FILEPATH=C:/msys64/mingw64/lib/libsqlite3.dll.a
 # INTERNAL cache entries
 ########################
 
-ARGON2_CFLAGS:INTERNAL=-IC:/msys64/mingw64/include
+ARGON2_CFLAGS:INTERNAL=-IC:/msys64/mingw64/bin/../include
 ARGON2_CFLAGS_I:INTERNAL=
 ARGON2_CFLAGS_OTHER:INTERNAL=
 ARGON2_FOUND:INTERNAL=1
-ARGON2_INCLUDEDIR:INTERNAL=C:/msys64/mingw64/include
-ARGON2_INCLUDE_DIRS:INTERNAL=C:/msys64/mingw64/include
-ARGON2_LDFLAGS:INTERNAL=-LC:/msys64/mingw64/lib;-largon2
+ARGON2_INCLUDEDIR:INTERNAL=C:/msys64/mingw64/bin/../include
+ARGON2_INCLUDE_DIRS:INTERNAL=C:/msys64/mingw64/bin/../include
+ARGON2_LDFLAGS:INTERNAL=-LC:/msys64/mingw64/bin/../lib;-largon2
 ARGON2_LDFLAGS_OTHER:INTERNAL=
-ARGON2_LIBDIR:INTERNAL=C:/msys64/mingw64/lib
+ARGON2_LIBDIR:INTERNAL=C:/msys64/mingw64/bin/../lib
 ARGON2_LIBRARIES:INTERNAL=argon2
-ARGON2_LIBRARY_DIRS:INTERNAL=C:/msys64/mingw64/lib
+ARGON2_LIBRARY_DIRS:INTERNAL=C:/msys64/mingw64/bin/../lib
 ARGON2_LIBS:INTERNAL=
 ARGON2_LIBS_L:INTERNAL=
 ARGON2_LIBS_OTHER:INTERNAL=
 ARGON2_LIBS_PATHS:INTERNAL=
 ARGON2_MODULE_NAME:INTERNAL=libargon2
-ARGON2_PREFIX:INTERNAL=C:/msys64/mingw64
-ARGON2_STATIC_CFLAGS:INTERNAL=-IC:/msys64/mingw64/include
+ARGON2_PREFIX:INTERNAL=C:/msys64/mingw64/bin/..
+ARGON2_STATIC_CFLAGS:INTERNAL=-IC:/msys64/mingw64/bin/../include
 ARGON2_STATIC_CFLAGS_I:INTERNAL=
 ARGON2_STATIC_CFLAGS_OTHER:INTERNAL=
-ARGON2_STATIC_INCLUDE_DIRS:INTERNAL=C:/msys64/mingw64/include
-ARGON2_STATIC_LDFLAGS:INTERNAL=-LC:/msys64/mingw64/lib;-largon2
+ARGON2_STATIC_INCLUDE_DIRS:INTERNAL=C:/msys64/mingw64/bin/../include
+ARGON2_STATIC_LDFLAGS:INTERNAL=-LC:/msys64/mingw64/bin/../lib;-largon2
 ARGON2_STATIC_LDFLAGS_OTHER:INTERNAL=
 ARGON2_STATIC_LIBDIR:INTERNAL=
 ARGON2_STATIC_LIBRARIES:INTERNAL=argon2
-ARGON2_STATIC_LIBRARY_DIRS:INTERNAL=C:/msys64/mingw64/lib
+ARGON2_STATIC_LIBRARY_DIRS:INTERNAL=C:/msys64/mingw64/bin/../lib
 ARGON2_STATIC_LIBS:INTERNAL=
 ARGON2_STATIC_LIBS_L:INTERNAL=
 ARGON2_STATIC_LIBS_OTHER:INTERNAL=
@@ -437,6 +555,24 @@ CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_STANDARD_LIBRARIES
 CMAKE_CXX_STANDARD_LIBRARIES-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_COMPILER
+CMAKE_C_COMPILER-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_COMPILER_AR
+CMAKE_C_COMPILER_AR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_COMPILER_RANLIB
+CMAKE_C_COMPILER_RANLIB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_FLAGS
+CMAKE_C_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_FLAGS_DEBUG
+CMAKE_C_FLAGS_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_FLAGS_MINSIZEREL
+CMAKE_C_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_FLAGS_RELEASE
+CMAKE_C_FLAGS_RELEASE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_FLAGS_RELWITHDEBINFO
+CMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_STANDARD_LIBRARIES
+CMAKE_C_STANDARD_LIBRARIES-ADVANCED:INTERNAL=1
 //Set initial state for CMake diagnostics; used to persist state
 // set by command-line options across invocations.
 CMAKE_DIAGNOSTIC_INIT:INTERNAL=CMD_AUTHOR=WARN;CMD_DEPRECATED=WARN;CMD_EXPERIMENTAL=WARN;CMD_INSTALL_ABSOLUTE_DESTINATION=IGNORE;CMD_POLICY=WARN;CMD_UNINITIALIZED=IGNORE;CMD_UNUSED_CLI=WARN
@@ -526,7 +662,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -1510,13 +1646,26 @@ Vulkan_INCLUDE_DIR-ADVANCED:INTERNAL=1
 Vulkan_LIBRARY-ADVANCED:INTERNAL=1
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/mlms
-__pkg_config_arguments_ARGON2:INTERNAL=REQUIRED;libargon2
+__pkg_config_arguments_ARGON2:INTERNAL=REQUIRED;IMPORTED_TARGET;libargon2
 __pkg_config_arguments_PC_SQLite3:INTERNAL=QUIET;sqlite3
 __pkg_config_checked_ARGON2:INTERNAL=1
 __pkg_config_checked_PC_SQLite3:INTERNAL=1
+cmake_package_name:INTERNAL=GTest
+//ADVANCED property for variable: gmock_build_tests
+gmock_build_tests-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: gtest_build_samples
+gtest_build_samples-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: gtest_build_tests
+gtest_build_tests-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: gtest_disable_pthreads
+gtest_disable_pthreads-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: gtest_force_shared_crt
+gtest_force_shared_crt-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: gtest_hide_internal_symbols
+gtest_hide_internal_symbols-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_ARGON2_argon2
 pkgcfg_lib_ARGON2_argon2-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_PC_SQLite3_sqlite3
 pkgcfg_lib_PC_SQLite3_sqlite3-ADVANCED:INTERNAL=1
-prefix_result:INTERNAL=C:/msys64/mingw64/lib
+prefix_result:INTERNAL=C:/msys64/mingw64/bin/../lib
 
