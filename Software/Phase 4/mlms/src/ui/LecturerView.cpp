@@ -153,20 +153,41 @@ void LecturerView::openFile() {
     }
 }
 
+
 void LecturerView::markSelected() {
     const auto id = currentId(marking_);
+
     if (!id) {
-        QMessageBox::information(this, "Select a submission", "First select a student's submission.");
+        QMessageBox::information(
+            this,
+            "Select a submission",
+            "First select a student's submission."
+        );
         return;
     }
+
+    const MarkingRow* selected = nullptr;
+
     for (const auto& r : markingRows_) {
-        if (r.submission.id() != *id) continue;
-        const auto* a = assignmentById(r.submission.assignmentId());
-        if (!a) return;
-        const Assignment assignment = *a;
-        const MarkingRow row = r; // reloadMarking() below replaces markingRows_
-        MarkDialog dlg(ctx_, user_, assignment, row, this);
-        if (dlg.exec() == QDialog::Accepted) reloadMarking();
-        return;
+        if (r.submission.id() == *id) {
+            selected = &r;
+            break;
+        }
+    }
+
+    if (!selected) return;
+
+    const auto* a =
+        assignmentById(selected->submission.assignmentId());
+
+    if (!a) return;
+
+    const Assignment assignment = *a;
+    const MarkingRow row = *selected;
+
+    MarkDialog dlg(ctx_, user_, assignment, row, this);
+
+    if (dlg.exec() == QDialog::Accepted) {
+        reloadMarking();
     }
 }
