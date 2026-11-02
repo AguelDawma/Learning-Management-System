@@ -37,4 +37,11 @@ public:
     // reason. A LATE submission made before the new deadline returns to SUBMITTED.
     void grantExtension(const User& lecturer, int assignmentId, int studentId, DateTime newDeadline,
                         const std::string& reason);
+
+    
+    // CR1: Grant an extension to all enrolled students.
+    // Preserve individual extensions that end later.
+    void grantClassExtension(const User& lecturer, int assignmentId,
+                             DateTime newDeadline, const std::string& reason);
+
 };

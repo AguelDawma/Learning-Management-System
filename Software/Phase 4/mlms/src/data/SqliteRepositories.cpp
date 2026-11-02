@@ -300,6 +300,21 @@ void SqliteAssignmentRepository::setPublished(int id, bool published) {
     st.run();
 }
 
+
+void SqliteAssignmentRepository::updateDeadline(
+    int assignmentId,
+    DateTime newDeadline) {
+
+    auto st = db_.prepare(
+        "UPDATE assignment SET deadline = ? "
+        "WHERE assignment_id = ?");
+
+    st.bind(1, newDeadline);
+    st.bind(2, assignmentId);
+    st.run();
+}
+
+
 std::optional<Extension> SqliteAssignmentRepository::findExtension(int assignmentId, int studentId) {
     auto st = db_.prepare(std::string(kExtensionColumns) + "WHERE assignment_id = ? AND student_id = ?");
     st.bind(1, assignmentId).bind(2, studentId);

@@ -146,6 +146,11 @@ ExtensionDialog::ExtensionDialog(AppContext& ctx, const User& lecturer, const As
     form->addRow("New deadline:", newDeadline);
     form->addRow("Reason (required):", reason);
     layout->addLayout(form);
+    
+    auto* wholeClass = new QCheckBox(
+        "Extend deadline for the whole class");
+    layout->addWidget(wholeClass);
+
     auto* box = okCancel(this, "Grant extension to selected student");
     box->button(QDialogButtonBox::Cancel)->setText("Close");
     layout->addWidget(box);
@@ -162,21 +167,58 @@ ExtensionDialog::ExtensionDialog(AppContext& ctx, const User& lecturer, const As
     };
     load();
 
-    connect(box, &QDialogButtonBox::accepted, this, [=, &ctx, &lecturer, &assignment] {
-        const auto student = currentId(table);
-        if (!student) {
-            QMessageBox::information(this, "Select a student", "Select the student who should get the extension.");
-            return;
-        }
-        if (guarded(this, [&] {
-                ctx.assignmentService.grantExtension(lecturer, assignment.id(), *student,
-                                                     fromQDateTime(newDeadline->dateTime()), s(reason->text()));
+    connect(box, &QDialogButtonBox::accepted,
+            this, [=, &ctx, &lecturer, &assignment] {
+
+        if (wholeClass->isChecked()) {
+
+            if (guarded(this, [&] {
+                ctx.assignmentService.grantClassExtension(
+                    lecturer,
+                    assignment.id(),
+                    fromQDateTime(newDeadline->dateTime()),
+                    s(reason->text()));
             })) {
-            reason->clear();
-            load();
-            QMessageBox::information(this, "Extension granted", "The extension has been saved.");
+                reason->clear();
+                load();
+
+                QMessageBox::information(
+                    this,
+                    "Class extension granted",
+                    "The deadline has been extended for the class.");
+            }
+
+        } else {
+
+            const auto student = currentId(table);
+
+            if (!student) {
+                QMessageBox::information(
+                    this,
+                    "Select a student",
+                    "Select the student who should get the extension.");
+                return;
+            }
+
+            if (guarded(this, [&] {
+                ctx.assignmentService.grantExtension(
+                    lecturer,
+                    assignment.id(),
+                    *student,
+                    fromQDateTime(newDeadline->dateTime()),
+                    s(reason->text()));
+            })) {
+                reason->clear();
+                load();
+
+                QMessageBox::information(
+                    this,
+                    "Extension granted",
+                    "The extension has been saved.");
+            }
         }
     });
+
 }
 
 // ---------------------------------------------------------------- marking

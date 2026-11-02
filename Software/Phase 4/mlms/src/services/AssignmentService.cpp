@@ -86,3 +86,102 @@ void AssignmentService::grantExtension(const User& lecturer, int assignmentId, i
     }
     tx->commit();
 }
+
+
+void AssignmentService::grantClassExtension(
+    const User& lecturer,
+    int assignmentId,
+    DateTime newDeadline,
+    const std::string& reason) {
+
+    lecturer.require(Permission::GrantExtension);
+
+    const auto assignment =
+        requireOwnAssignment(lecturer, assignmentId);
+
+    requireNotBlank(reason, "The reason for the extension");
+
+    if (newDeadline <= assignment.deadline()) {
+        throw ValidationError(
+            "The new deadline must be after the original deadline");
+    }
+
+    const auto students = courses_.studentsIn(assignment.courseId());
+
+    if (students.empty()) {
+        throw ValidationError("No students are enrolled in this course");
+    }
+
+    // Validate every affected student before changing the database.
+    for (const auto& student : students) {
+        const auto existing =
+            assignments_.findExtension(assignmentId, student.id);
+
+        // Preserve individual extensions that end later.
+        if (existing && existing->newDeadline >= newDeadline) {
+            continue;
+        }
+
+        const auto active =
+            submissions_.findActive(assignmentId, student.id);
+
+        if (active && !active->awaitingFirstMark()) {
+            throw ValidationError(
+                "A submission has already been marked");
+        }
+
+        if (active &&
+            active->state() == SubmissionState::SUBMITTED &&
+            active->submittedAt() > newDeadline) {
+            throw ValidationError(
+                "New deadline precedes an on-time submission");
+        }
+    }
+
+    const DateTime now = clock_.now();
+    const std::string trimmedReason = trim(reason);
+
+    // All updates succeed together, or all are rolled back.
+    auto tx = tx_.begin();
+
+    // CR1: Update the actual assignment deadline in SQLite.
+    assignments_.updateDeadline(assignmentId, newDeadline);
+
+    for (const auto& student : students) {
+        const auto existing =
+            assignments_.findExtension(assignmentId, student.id);
+
+        if (existing && existing->newDeadline >= newDeadline) {
+            continue;
+        }
+
+        assignments_.saveExtension(
+            Extension{assignmentId, student.id, newDeadline,
+                      trimmedReason, lecturer.id(), now});
+
+        auto active =
+            submissions_.findActive(assignmentId, student.id);
+
+        if (active &&
+            active->state() == SubmissionState::LATE &&
+            active->submittedAt() <= newDeadline) {
+
+            active->transitionTo(SubmissionState::SUBMITTED);
+
+            submissions_.updateState(
+                active->id(), SubmissionState::SUBMITTED);
+
+            notify(MarkChangeEvent{
+                lecturer.id(),
+                active->id(),
+                "state",
+                toString(SubmissionState::LATE),
+                toString(SubmissionState::SUBMITTED),
+                "Class extension granted: " + trimmedReason,
+                now
+            });
+        }
+    }
+
+    tx->commit();
+}
