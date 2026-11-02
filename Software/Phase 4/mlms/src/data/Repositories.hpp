@@ -60,6 +60,8 @@ public:
     virtual std::vector<Assignment> findByCourse(int courseId) = 0;
     virtual int add(const Assignment& a) = 0;
     virtual void setPublished(int id, bool published) = 0;
+    virtual void updateDeadline(int assignmentId,
+                            DateTime newDeadline) = 0;
     virtual std::optional<Extension> findExtension(int assignmentId, int studentId) = 0;
     virtual std::vector<Extension> findExtensions(int assignmentId) = 0;
     // Inserts or replaces the single extension a student may hold for an assignment.

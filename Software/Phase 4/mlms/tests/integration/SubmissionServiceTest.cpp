@@ -105,3 +105,178 @@ TEST_F(SubmissionServiceTest, StudentListShowsExtensionAndStatus) {
     EXPECT_EQ(list[0].active->state(), SubmissionState::SUBMITTED);
     EXPECT_FALSE(list[0].result.has_value());
 }
+
+
+TEST_F(SubmissionServiceTest,
+       ClassExtensionUpdatesDatabaseDeadline) {
+
+    const DateTime newDeadline = deadline.plusDays(3);
+
+    // Lecturer grants an extension to the entire class.
+    ctx->assignmentService.grantClassExtension(
+        *lecturer,
+        assignmentId,
+        newDeadline,
+        "Class-wide extension approved"
+    );
+
+    // Verify the actual deadline stored in SQLite.
+    const auto assignment = ctx->assignments.find(assignmentId);
+
+    ASSERT_TRUE(assignment.has_value());
+    EXPECT_EQ(assignment->deadline(), newDeadline);
+
+    // Verify both enrolled students use the new deadline.
+    clock->t = deadline.plusDays(1);
+
+    EXPECT_EQ(
+        ctx->submissionService.submit(
+            *student, assignmentId, file()
+        ).state,
+        SubmissionState::SUBMITTED
+    );
+
+    EXPECT_EQ(
+        ctx->submissionService.submit(
+            *student2, assignmentId, file()
+        ).state,
+        SubmissionState::SUBMITTED
+    );
+}
+
+
+TEST_F(SubmissionServiceTest,
+       ClassExtensionPreservesLaterIndividualExtension) {
+
+    const DateTime individualDeadline = deadline.plusDays(10);
+    const DateTime classDeadline = deadline.plusDays(5);
+
+    // Give student1 a longer individual extension first.
+    ctx->assignmentService.grantExtension(
+        *lecturer,
+        assignmentId,
+        student->id(),
+        individualDeadline,
+        "Approved individual extension"
+    );
+
+    // Extend the whole class by five days.
+    ctx->assignmentService.grantClassExtension(
+        *lecturer,
+        assignmentId,
+        classDeadline,
+        "Approved class-wide extension"
+    );
+
+    // Check the assignment's stored deadline.
+    const auto assignment = ctx->assignments.find(assignmentId);
+
+    ASSERT_TRUE(assignment.has_value());
+    EXPECT_EQ(assignment->deadline(), classDeadline);
+
+    // Student1 must retain the later individual deadline.
+    const auto individual =
+        ctx->assignments.findExtension(
+            assignmentId, student->id());
+
+    ASSERT_TRUE(individual.has_value());
+    EXPECT_EQ(individual->newDeadline, individualDeadline);
+
+    // Student2 should receive the class-wide deadline.
+    const auto other =
+        ctx->assignments.findExtension(
+            assignmentId, student2->id());
+
+    ASSERT_TRUE(other.has_value());
+    EXPECT_EQ(other->newDeadline, classDeadline);
+}
+
+
+TEST_F(SubmissionServiceTest,
+       ClassExtensionRejectsInvalidDeadlineWithoutChanges) {
+
+    const DateTime invalidDeadline = deadline.plusDays(-1);
+
+    EXPECT_THROW(
+        ctx->assignmentService.grantClassExtension(
+            *lecturer, assignmentId, invalidDeadline,
+            "Invalid class extension"),
+        ValidationError
+    );
+
+    const auto assignment = ctx->assignments.find(assignmentId);
+    ASSERT_TRUE(assignment.has_value());
+    EXPECT_EQ(assignment->deadline(), deadline);
+
+    EXPECT_FALSE(ctx->assignments.findExtension(
+        assignmentId, student->id()).has_value());
+
+    EXPECT_FALSE(ctx->assignments.findExtension(
+        assignmentId, student2->id()).has_value());
+}
+
+
+TEST_F(SubmissionServiceTest,
+       ClassExtensionRejectsUnauthorizedStudent) {
+
+    EXPECT_THROW(
+        ctx->assignmentService.grantClassExtension(
+            *student, assignmentId, deadline.plusDays(3),
+            "Unauthorized extension"),
+        AccessDenied
+    );
+
+    const auto assignment = ctx->assignments.find(assignmentId);
+    ASSERT_TRUE(assignment.has_value());
+    EXPECT_EQ(assignment->deadline(), deadline);
+}
+
+
+TEST_F(SubmissionServiceTest,
+       ClassExtensionChangesLateSubmissionToSubmitted) {
+
+    const int submissionId =
+        submitAt(*student, deadline.plusDays(1));
+
+    ASSERT_EQ(
+        ctx->submissions.find(submissionId)->state(),
+        SubmissionState::LATE
+    );
+
+    ctx->assignmentService.grantClassExtension(
+        *lecturer, assignmentId, deadline.plusDays(3),
+        "Class deadline extended"
+    );
+
+    const auto updated = ctx->submissions.find(submissionId);
+
+    ASSERT_TRUE(updated.has_value());
+    EXPECT_EQ(updated->state(), SubmissionState::SUBMITTED);
+}
+
+
+TEST_F(SubmissionServiceTest,
+       ClassExtensionAppearsOnStudentAssignmentList) {
+
+    const DateTime newDeadline = deadline.plusDays(5);
+
+    ctx->assignmentService.grantClassExtension(
+        *lecturer, assignmentId, newDeadline,
+        "Extension for all students"
+    );
+
+    const auto list1 =
+        ctx->submissionService.myAssignments(*student);
+
+    const auto list2 =
+        ctx->submissionService.myAssignments(*student2);
+
+    ASSERT_EQ(list1.size(), 1u);
+    ASSERT_EQ(list2.size(), 1u);
+
+    EXPECT_EQ(list1[0].assignment.deadline(), newDeadline);
+    EXPECT_EQ(list2[0].assignment.deadline(), newDeadline);
+
+    EXPECT_EQ(list1[0].effectiveDeadline, newDeadline);
+    EXPECT_EQ(list2[0].effectiveDeadline, newDeadline);
+}

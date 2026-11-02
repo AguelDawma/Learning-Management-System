@@ -51,6 +51,8 @@ public:
     std::vector<Assignment> findByCourse(int courseId) override;
     int add(const Assignment& a) override;
     void setPublished(int id, bool published) override;
+    void updateDeadline(int assignmentId,
+                    DateTime newDeadline) override;
     std::optional<Extension> findExtension(int assignmentId, int studentId) override;
     std::vector<Extension> findExtensions(int assignmentId) override;
     void saveExtension(const Extension& e) override;
